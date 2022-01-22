@@ -223,10 +223,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@lusc/sudoku@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@lusc/sudoku/-/sudoku-1.3.1.tgz#600e6ef2dd2111fdba2abe91b46dc7c30f49406b"
-  integrity sha512-uKRTmOIlYkw/EzNLurUl6RBS1YCfES7qpFZfFDhSr4mhyZwPrOFJdAOguBiZPA77FJgEN47ePLkhbF6L/5flTQ==
+"@lusc/sudoku@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@lusc/sudoku/-/sudoku-1.3.2.tgz#0733ed7806ab121440ed1ad5b8bfca8248335059"
+  integrity sha512-RGXVuWgKWH6fDy60VPKB5a6uRtsLTsB5H23YvzOv4FJf+EH45JL4dk98c4Jx5q1dKUdzKGLwh6fZWd8osFHSBA==
 
 "@lusc/tsconfig@^1.0.0":
   version "1.0.0"
@@ -281,6 +281,11 @@
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
+
+"@types/node@^17.0.10":
+  version "17.0.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.10.tgz#616f16e9d3a2a3d618136b1be244315d95bd7cab"
+  integrity sha512-S/3xB4KzyFxYGCppyDt68yzBU9ysL88lSdIah4D6cptdcltc4NCPCAMc0+PCpg/lLIyC7IPvj2Z52OJWeIUkog==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
