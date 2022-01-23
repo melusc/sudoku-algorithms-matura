@@ -65,7 +65,8 @@ export const generateSudoku = (size: number): Sudoku => {
 
 	while (indices.length > 0) {
 		const newSudoku = sudoku.clone();
-		const randIndex = randomInt(indices.length);
+		const randIndexOfIndices = randomInt(indices.length);
+		const randIndex = indices[randIndexOfIndices]!;
 
 		const validity = newSudoku.clearCell(randIndex).solve();
 
@@ -73,7 +74,7 @@ export const generateSudoku = (size: number): Sudoku => {
 			sudoku.clearCell(randIndex);
 		}
 
-		indices.splice(randIndex, 1);
+		indices.splice(randIndexOfIndices, 1);
 	}
 
 	return sudoku;
