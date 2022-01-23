@@ -9,7 +9,7 @@ import {Sudoku} from '@lusc/sudoku';
 export const generateFilledSudoku = (size: number): Sudoku => {
 	assert(Number.isInteger(size) && size > 0);
 
-	let sudoku = new Sudoku();
+	let sudoku = new Sudoku(size);
 	sudoku.shouldLogErrors = false;
 
 	/**

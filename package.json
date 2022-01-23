@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"private": true,
 	"dependencies": {
-		"@lusc/sudoku": "^1.4.0"
+		"@lusc/sudoku": "^1.5.1"
 	},
 	"engines": {
 		"node": ">= 17"
