@@ -21,11 +21,11 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 			return;
 		}
 
-		const allPossibles = [...sudoku.getCell(index).possible];
+		const candidates = [...sudoku.getCell(index).candidates];
 
-		while (!sudoku.isSolved() && allPossibles.length > 0) {
-			const randIndex = randomInt(allPossibles.length);
-			const randNumber = allPossibles[randIndex]!;
+		while (!sudoku.isSolved() && candidates.length > 0) {
+			const randIndex = randomInt(candidates.length);
+			const randNumber = candidates[randIndex]!;
 			const newSudoku = sudoku.clone();
 
 			newSudoku.setContent(index, randNumber);
@@ -35,7 +35,7 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 				return;
 			}
 
-			allPossibles.splice(randIndex, 1);
+			candidates.splice(randIndex, 1);
 		}
 	};
 
