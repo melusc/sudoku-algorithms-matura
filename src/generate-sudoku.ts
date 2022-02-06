@@ -3,14 +3,38 @@ import assert from 'node:assert/strict';
 
 import {Sudoku} from '@lusc/sudoku';
 
+function * generateIndices(s: Sudoku, size: number): Iterable<number[]> {
+	const indices: number[] = [];
+
+	for (const [i, c] of s.getCells().entries()) {
+		if (c.content !== undefined) {
+			indices.push(i);
+		}
+	}
+
+	while (indices.length > 0) {
+		const result: number[] = [];
+
+		for (let i = 0; i < size && indices.length > 0; ++i) {
+			const randIndicesIndex = randomInt(indices.length);
+			result.push(indices[randIndicesIndex]!);
+			indices.splice(randIndicesIndex, 1);
+		}
+
+		yield result;
+	}
+}
+
 // This function generates valid sudokus
 // by iterating through all cells from start and from back simultaneously
 // and trying to randomly fill from `possibles`.
 export const generateFilledSudoku = (size: number): Sudoku => {
-	assert(Number.isInteger(size) && size > 0);
+	// If sqrt is an integer the number itself is as well
+	assert(size > 0 && Number.isInteger(Math.sqrt(size)));
 
 	let sudoku = new Sudoku(size);
 	sudoku.shouldLogErrors = false;
+	sudoku.mode = 'fast';
 
 	/**
 	 * For the given index try randomly from
@@ -21,9 +45,13 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 			return;
 		}
 
+		if (sudoku.isSolved()) {
+			return;
+		}
+
 		const candidates = [...sudoku.getCell(index).candidates];
 
-		while (!sudoku.isSolved() && candidates.length > 0) {
+		while (candidates.length > 0) {
 			const randIndex = randomInt(candidates.length);
 			const randNumber = candidates[randIndex]!;
 			const newSudoku = sudoku.clone();
@@ -46,6 +74,7 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 		tryFillCell(maxIndex - i);
 	}
 
+	sudoku.mode = 'thorough';
 	if (sudoku.isSolved() && sudoku.isValid()) {
 		return sudoku;
 	}
@@ -57,25 +86,30 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 // and randomly removes cells until the sudoku cannot
 // be solved by `@lusc/sudoku` anymore
 export const generateSudoku = (size: number): Sudoku => {
-	assert(Number.isInteger(size) && size > 0);
-
 	const sudoku = generateFilledSudoku(size);
 
-	const indices = Array.from({length: size ** 2}, (_v, i) => i);
+	const emptySudoku = (size: number): void => {
+		for (const indices of generateIndices(sudoku, size)) {
+			const newSudoku = sudoku.clone();
+			for (const index of indices) {
+				newSudoku.clearCell(index);
+			}
 
-	while (indices.length > 0) {
-		const newSudoku = sudoku.clone();
-		const randIndexOfIndices = randomInt(indices.length);
-		const randIndex = indices[randIndexOfIndices]!;
-
-		const validity = newSudoku.clearCell(randIndex).solve();
-
-		if (validity === 'finish') {
-			sudoku.clearCell(randIndex);
+			if (newSudoku.solve() === 'finish') {
+				for (const index of indices) {
+					sudoku.clearCell(index);
+				}
+			}
 		}
+	};
 
-		indices.splice(randIndexOfIndices, 1);
-	}
+	// First try removing a bunch of numbers because it's cheaper
+	// Then remove 2 numbers to remove as many as possible which is more expensive
+	// prettier-ignore
+	let amountIndices = (size ** (3 / 2)) + 2;
+	do {
+		emptySudoku(amountIndices);
+	} while ((amountIndices -= size) > 1);
 
 	return sudoku;
 };
