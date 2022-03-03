@@ -3,25 +3,17 @@ import assert from 'node:assert/strict';
 
 import {Sudoku} from '@lusc/sudoku';
 
-function * generateIndices(s: Sudoku, size: number): Iterable<number[]> {
-	const indices: number[] = [];
+function * randomArrayItem<T>(
+	array: T[],
+	shouldContinue?: () => boolean,
+): Iterable<T> {
+	shouldContinue ??= () => true;
 
-	for (const [i, c] of s.getCells().entries()) {
-		if (c.content !== undefined) {
-			indices.push(i);
-		}
-	}
-
-	while (indices.length > 0) {
-		const result: number[] = [];
-
-		for (let i = 0; i < size && indices.length > 0; ++i) {
-			const randIndicesIndex = randomInt(indices.length);
-			result.push(indices[randIndicesIndex]!);
-			indices.splice(randIndicesIndex, 1);
-		}
-
-		yield result;
+	while (array.length > 0 && shouldContinue()) {
+		const randIndex = randomInt(array.length);
+		const item = array[randIndex]!;
+		array.splice(randIndex, 1);
+		yield item;
 	}
 }
 
@@ -29,10 +21,21 @@ function * generateIndices(s: Sudoku, size: number): Iterable<number[]> {
 // by iterating through all cells from start and from back simultaneously
 // and trying to randomly fill from `possibles`.
 export const generateFilledSudoku = (size: number): Sudoku => {
+	console.time('generateFilledSudoku');
+
 	// If sqrt is an integer the number itself is as well
 	assert(size > 0 && Number.isInteger(Math.sqrt(size)));
 
-	let sudoku = new Sudoku(size);
+	// Small boost by initialising first row
+	// less calls to .solve and .isSolved
+	const firstRow = [
+		...randomArrayItem(Array.from({length: size}, (_v, i) => i)),
+	];
+
+	let sudoku = Sudoku.fromPrefilled([firstRow], size);
+
+	sudoku.solve();
+
 	sudoku.shouldLogErrors = false;
 	sudoku.mode = 'fast';
 
@@ -45,15 +48,9 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 			return;
 		}
 
-		if (sudoku.isSolved()) {
-			return;
-		}
-
 		const candidates = [...sudoku.getCell(index).candidates];
 
-		while (candidates.length > 0) {
-			const randIndex = randomInt(candidates.length);
-			const randNumber = candidates[randIndex]!;
+		for (const randNumber of randomArrayItem(candidates)) {
 			const newSudoku = sudoku.clone();
 
 			newSudoku.setContent(index, randNumber);
@@ -62,17 +59,17 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 				sudoku = newSudoku;
 				return;
 			}
-
-			candidates.splice(randIndex, 1);
 		}
 	};
 
-	// prettier-ignore
-	const maxIndex = (size ** 2) - 1;
-	for (let i = 0; !sudoku.isSolved() && i <= maxIndex / 2; ++i) {
+	const cellsLength = size ** 2;
+	// eslint-disable-next-line no-bitwise
+	for (let i = 0; i < cellsLength >> 1 && !sudoku.isSolved(); ++i) {
 		tryFillCell(i);
-		tryFillCell(maxIndex - i);
+		tryFillCell(cellsLength - i - 1);
 	}
+
+	console.timeEnd('generateFilledSudoku');
 
 	sudoku.mode = 'thorough';
 	if (sudoku.isSolved() && sudoku.isValid()) {
@@ -86,30 +83,31 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 // and randomly removes cells until the sudoku cannot
 // be solved by `@lusc/sudoku` anymore
 export const generateSudoku = (size: number): Sudoku => {
-	const sudoku = generateFilledSudoku(size);
+	// This includes time for generateFilledSudoku
+	console.time('generateSudoku');
 
-	const emptySudoku = (size: number): void => {
-		for (const indices of generateIndices(sudoku, size)) {
-			const newSudoku = sudoku.clone();
-			for (const index of indices) {
-				newSudoku.clearCell(index);
-			}
+	const filledSudoku = generateFilledSudoku(size);
 
-			if (newSudoku.solve() === 'finish') {
-				for (const index of indices) {
-					sudoku.clearCell(index);
-				}
-			}
+	const cells = filledSudoku.getCells().map((c, i) => [c.content!, i] as const);
+
+	const mutatingSudoku = new Sudoku(size);
+	const nonNecessaryCells: number[] = [];
+
+	for (const [content, index] of randomArrayItem(cells)) {
+		if (mutatingSudoku.getCell(index).content === content) {
+			nonNecessaryCells.push(index);
+		} else {
+			mutatingSudoku.setContent(index, content).solve();
 		}
-	};
+	}
 
-	// First try removing a bunch of numbers because it's cheaper
-	// Then remove 2 numbers to remove as many as possible which is more expensive
-	// prettier-ignore
-	let amountIndices = (size ** (3 / 2)) + 2;
-	do {
-		emptySudoku(amountIndices);
-	} while ((amountIndices -= size) > 1);
+	assert(mutatingSudoku.isSolved(), 'isSolved');
+	assert(mutatingSudoku.isValid(), 'isValid');
 
-	return sudoku;
+	for (const index of nonNecessaryCells) {
+		mutatingSudoku.clearCell(index);
+	}
+
+	console.timeEnd('generateSudoku');
+	return mutatingSudoku;
 };
