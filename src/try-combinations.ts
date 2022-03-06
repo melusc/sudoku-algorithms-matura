@@ -6,7 +6,8 @@ import * as plugins from '@lusc/sudoku/dist/lib/plugins/index.js';
 import {createLogUpdate} from 'log-update';
 import {BetterMap} from './utils.js';
 
-await mkdir(new URL('../data', import.meta.url), {recursive: true});
+const outDir = new URL('../data/combinations/', import.meta.url);
+await mkdir(outDir, {recursive: true});
 
 // Not all the internals, only the required ones
 type SudokuWithInternals = Sudoku & {
@@ -66,8 +67,8 @@ const log = createLogUpdate(process.stdout, {
 
 const getUrl = (size: number, combinationsAmount: number, solved: boolean) =>
 	new URL(
-		`../data/${solved ? '' : 'un'}solved-${size}-${combinationsAmount}.json`,
-		import.meta.url,
+		`${solved ? '' : 'un'}solved-${size}-${combinationsAmount}.json`,
+		outDir,
 	);
 
 export const doTryCombinations = async (

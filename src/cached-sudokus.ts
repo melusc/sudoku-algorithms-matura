@@ -5,11 +5,12 @@ import {promisify} from 'node:util';
 import {Sudoku} from '@lusc/sudoku';
 import {generateSudoku} from './generate-sudoku.js';
 
-await fs.mkdir(new URL('../data', import.meta.url), {recursive: true});
+const outDir = new URL('../data/generated/', import.meta.url);
+await fs.mkdir(outDir, {recursive: true});
 
 const paths = {
-	9: new URL('../data/9.txt', import.meta.url),
-	16: new URL('../data/16.txt', import.meta.url),
+	9: new URL('9.txt', outDir),
+	16: new URL('16.txt', outDir),
 } as const;
 
 const previous = {
