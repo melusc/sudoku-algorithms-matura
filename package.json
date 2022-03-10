@@ -1,14 +1,14 @@
 {
 	"name": "sudoku-algorithms-matura",
 	"version": "1.0.0",
-	"main": "index.js",
 	"repository": "https://github.com/melusc/sudoku-algorithms-matura",
 	"author": "Luca <lusc.dev@gmail.com>",
 	"license": "MIT",
 	"private": true,
 	"dependencies": {
 		"@lusc/sudoku": "^2.3.1",
-		"log-update": "^5.0.0"
+		"log-update": "^5.0.0",
+		"ow": "^0.28.1"
 	},
 	"engines": {
 		"node": ">= 17"

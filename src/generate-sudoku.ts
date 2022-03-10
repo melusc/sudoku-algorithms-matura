@@ -91,11 +91,10 @@ export const generateSudoku = (size: number): Sudoku => {
 	const cells = filledSudoku.getCells().map((c, i) => [c.content!, i] as const);
 
 	const mutatingSudoku = new Sudoku(size);
-	const nonNecessaryCells: number[] = [];
 
 	for (const [content, index] of randomArrayItem(cells)) {
 		if (mutatingSudoku.getCell(index).content === content) {
-			nonNecessaryCells.push(index);
+			filledSudoku.clearCell(index);
 		} else {
 			mutatingSudoku.setContent(index, content).solve();
 		}
@@ -104,10 +103,6 @@ export const generateSudoku = (size: number): Sudoku => {
 	assert(mutatingSudoku.isSolved(), 'isSolved');
 	assert(mutatingSudoku.isValid(), 'isValid');
 
-	for (const index of nonNecessaryCells) {
-		mutatingSudoku.clearCell(index);
-	}
-
 	console.timeEnd('generateSudoku');
-	return mutatingSudoku;
+	return filledSudoku;
 };
