@@ -31,6 +31,7 @@ const validators = {
 				ow.object.exactShape({
 					plugins: ow.array.ofType(ow.string),
 					completeness: ow.number,
+					result: ow.string,
 				}),
 			),
 		),
@@ -99,6 +100,7 @@ export type SolvedValues = Array<{plugins: PluginKeys[]; rounds: number}>;
 export type UnsolvedValues = Array<{
 	plugins: PluginKeys[];
 	completeness: number;
+	result: string;
 }>;
 export type CombinationsResults = {
 	solved: ReadonlyMap<string, SolvedValues>;
@@ -139,7 +141,11 @@ export const doTryCombinations = async (
 				// prettier-ignore
 				unsolvedByKey
 					.get(stringified)
-					.push({plugins: pluginsUsed, completeness: count / (sudoku.size ** 3)});
+					.push({
+						plugins: pluginsUsed,
+						completeness: count / (sudoku.size ** 3),
+						result: solvedSudoku.toString().trimEnd(),
+					});
 			}
 		}
 	}
