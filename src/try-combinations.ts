@@ -14,6 +14,7 @@ type SudokuWithInternals = Sudoku & {
 	anyChanged: boolean;
 };
 
+const completenessNumber = ow.number.finite.inRange(0, 1);
 const validators = {
 	solved: ow.create(
 		ow.map.keysOfType(ow.string).valuesOfType(
@@ -30,8 +31,17 @@ const validators = {
 			ow.array.ofType(
 				ow.object.exactShape({
 					plugins: ow.array.ofType(ow.string),
-					completeness: ow.number,
 					result: ow.string,
+					completeness: ow.object.exactShape({
+						withCandidates: ow.object.exactShape({
+							relative: completenessNumber,
+							absolute: completenessNumber,
+						}),
+						noCandidates: ow.object.exactShape({
+							relative: completenessNumber,
+							absolute: completenessNumber,
+						}),
+					}),
 				}),
 			),
 		),
@@ -62,6 +72,59 @@ function * everyCombination(
 		}
 	}
 }
+
+const completenessCalculator = (
+	sudoku: Sudoku,
+	previousSudoku: Sudoku,
+): {
+	completeness: UnsolvedValues[number]['completeness'];
+} => {
+	const {size, getCells} = sudoku;
+	let withCandidatesAbsolute = 0;
+	let withCandidatesRelative = 0;
+	let noCandidatesAbsolute = 0;
+	let noCandidatesRelative = 0;
+
+	let previousNumberCount = 0;
+
+	for (const cell of getCells()) {
+		const noCandidates = cell.content === undefined ? 0 : 1;
+
+		withCandidatesAbsolute
+			+= cell.content === undefined ? size - cell.candidates.size : size;
+		noCandidatesAbsolute += noCandidates;
+
+		const previousCell = previousSudoku.getCell(cell.index);
+		if (previousCell.content === undefined) {
+			withCandidatesRelative
+				+= cell.content === undefined
+					? previousCell.candidates.size - cell.candidates.size
+					: size;
+			noCandidatesRelative += noCandidates;
+			++previousNumberCount;
+		}
+	}
+
+	const amountCells = size ** 2;
+	// Case `previousNumberContent === 0`
+	//   div by null would by NaN
+	//   therefore return 0
+	return {
+		completeness: {
+			withCandidates: {
+				relative:
+					previousNumberCount
+					&& withCandidatesRelative / previousNumberCount / size,
+				absolute: withCandidatesAbsolute / amountCells / size,
+			},
+			noCandidates: {
+				relative:
+					previousNumberCount && noCandidatesRelative / previousNumberCount,
+				absolute: noCandidatesAbsolute / amountCells,
+			},
+		},
+	};
+};
 
 function solve(
 	sudoku: Sudoku,
@@ -99,8 +162,17 @@ const getUrl = (size: number, combinationsAmount: number) =>
 export type SolvedValues = Array<{plugins: PluginKeys[]; rounds: number}>;
 export type UnsolvedValues = Array<{
 	plugins: PluginKeys[];
-	completeness: number;
 	result: string;
+	completeness: {
+		withCandidates: {
+			absolute: number;
+			relative: number;
+		};
+		noCandidates: {
+			absolute: number;
+			relative: number;
+		};
+	};
 }>;
 export type CombinationsResults = {
 	solved: ReadonlyMap<string, SolvedValues>;
@@ -130,21 +202,16 @@ export const doTryCombinations = async (
 			if (solvedSudoku.isSolved()) {
 				solvedByKey.get(stringified).push({plugins: pluginsUsed, rounds});
 			} else {
-				let count = 0;
-				for (const cell of sudoku.getCells()) {
-					count
-						+= cell.content === undefined
-							? sudoku.size - cell.candidates.size
-							: sudoku.size;
-				}
-
 				// prettier-ignore
 				unsolvedByKey
 					.get(stringified)
 					.push({
 						plugins: pluginsUsed,
-						completeness: count / (sudoku.size ** 3),
 						result: solvedSudoku.toString().trimEnd(),
+						...completenessCalculator(
+							solvedSudoku,
+							sudoku,
+						),
 					});
 			}
 		}
