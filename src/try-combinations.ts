@@ -22,6 +22,7 @@ const validators = {
 				ow.object.exactShape({
 					plugins: ow.array.ofType(ow.string),
 					rounds: ow.number,
+					packageRounds: ow.number,
 				}),
 			),
 		),
@@ -32,6 +33,7 @@ const validators = {
 				ow.object.exactShape({
 					plugins: ow.array.ofType(ow.string),
 					result: ow.string,
+					packageRounds: ow.number,
 					completeness: ow.object.exactShape({
 						withCandidates: ow.object.exactShape({
 							relative: completenessNumber,
@@ -159,10 +161,15 @@ const log = createLogUpdate(process.stdout, {
 const getUrl = (size: number, combinationsAmount: number) =>
 	new URL(`${size}-${combinationsAmount}.json`, outDir);
 
-export type SolvedValues = Array<{plugins: PluginKeys[]; rounds: number}>;
+export type SolvedValues = Array<{
+	plugins: PluginKeys[];
+	rounds: number;
+	packageRounds: number;
+}>;
 export type UnsolvedValues = Array<{
 	plugins: PluginKeys[];
 	result: string;
+	packageRounds: number;
 	completeness: {
 		withCandidates: {
 			absolute: number;
@@ -196,15 +203,21 @@ export const doTryCombinations = async (
 		logProgress(i);
 
 		const stringified = sudoku.toString().trimEnd();
+		const clone = sudoku.clone();
+		clone.solve();
+		const packageRounds = clone.rounds;
 
 		for (const pluginKeys of everyCombination(combinationsAmount)) {
 			const {solvedSudoku, pluginsUsed, rounds} = solve(sudoku, pluginKeys);
 			if (solvedSudoku.isSolved()) {
-				solvedByKey.get(stringified).push({plugins: pluginsUsed, rounds});
+				solvedByKey
+					.get(stringified)
+					.push({plugins: pluginsUsed, rounds, packageRounds});
 			} else {
 				unsolvedByKey.get(stringified).push({
 					plugins: pluginsUsed,
 					result: solvedSudoku.toString().trimEnd(),
+					packageRounds,
 					...completenessCalculator(solvedSudoku, sudoku),
 				});
 			}
