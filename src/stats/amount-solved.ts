@@ -19,10 +19,6 @@ const previous: Record<
 		}
 	>
 > = {};
-//                     ^ size
-//                                    ^ amount combinations
-//                                                   ^ plugin
-//                                                           ^ relative amount
 
 export const amountSolved = async (
 	{solved, combinationsAmount}: CombinationsResults,
