@@ -202,17 +202,11 @@ export const doTryCombinations = async (
 			if (solvedSudoku.isSolved()) {
 				solvedByKey.get(stringified).push({plugins: pluginsUsed, rounds});
 			} else {
-				// prettier-ignore
-				unsolvedByKey
-					.get(stringified)
-					.push({
-						plugins: pluginsUsed,
-						result: solvedSudoku.toString().trimEnd(),
-						...completenessCalculator(
-							solvedSudoku,
-							sudoku,
-						),
-					});
+				unsolvedByKey.get(stringified).push({
+					plugins: pluginsUsed,
+					result: solvedSudoku.toString().trimEnd(),
+					...completenessCalculator(solvedSudoku, sudoku),
+				});
 			}
 		}
 	}
