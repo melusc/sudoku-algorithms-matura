@@ -1,46 +1,82 @@
-import {rm, writeFile} from 'node:fs/promises';
+import {writeFile} from 'node:fs/promises';
+
+import Papa from 'papaparse';
 
 import type {CombinationsResults} from '../try-combinations.js';
 import {BetterMap} from '../utils.js';
 
-import {outDir} from './utils.js';
+import {outDir, pluginsSeperator} from './utils.js';
 
-const outFilePath = new URL('amount-solved.json', outDir);
+const jsonOutPath = new URL('amount-solved.json', outDir);
+const csvOutPath = new URL('amount-solved.csv', outDir);
 
-await rm(outFilePath, {force: true});
+type AmountSolvedValue = {
+	plugins: string[];
+	amountSolved: number;
+};
+type AmountSolved = Record<number, Record<number, AmountSolvedValue[]>>;
 
-const previous: Record<
-	number,
-	Record<
-		number,
-		{
-			combination: Record<string, number>;
-			perPlugin: Record<string, number>;
+const toCsv = (input: AmountSolved): string => {
+	const result: Array<{
+		size: string;
+		amount: string;
+		plugins: string;
+		amountSolved: number;
+	}> = [];
+
+	for (const [size, sizeValues] of Object.entries(input)) {
+		for (const [amount, values] of Object.entries(sizeValues)) {
+			for (const {plugins, amountSolved} of values) {
+				result.push({
+					size,
+					amount,
+					plugins: plugins.join(pluginsSeperator),
+					amountSolved,
+				});
+			}
 		}
-	>
-> = {};
+	}
+
+	return Papa.unparse(result);
+};
+
+const writeCsv = async (input: AmountSolved): Promise<void> => {
+	const result = toCsv(input);
+
+	await writeFile(csvOutPath, result);
+};
+
+const previous: AmountSolved = {};
 
 export const amountSolved = async (
 	{solved, combinationsAmount}: CombinationsResults,
 	size: number,
 ): Promise<void> => {
 	const amount = new BetterMap<string, number>(() => 0);
-	const amountByPlugin = new BetterMap<string, number>(() => 0);
 	for (const allPlugins of solved.values()) {
 		for (const {plugins} of allPlugins) {
-			const key = plugins.join(',');
+			const key = plugins.join(pluginsSeperator);
 			amount.set(key, amount.get(key) + 1);
 
-			for (const plugin of plugins) {
-				amountByPlugin.set(plugin, amountByPlugin.get(plugin) + 1);
+			if (plugins.length > 1) {
+				for (const plugin of plugins) {
+					amount.set(plugin, amount.get(plugin) + 1);
+				}
 			}
 		}
 	}
 
-	(previous[size] ??= {})[combinationsAmount] = {
-		combination: Object.fromEntries(amount),
-		perPlugin: Object.fromEntries(amountByPlugin),
-	};
+	const result: AmountSolvedValue[] = [];
 
-	await writeFile(outFilePath, JSON.stringify(previous, undefined, '\t'));
+	for (const [plugins, amountSolved] of amount) {
+		result.push({
+			plugins: plugins.split(pluginsSeperator),
+			amountSolved,
+		});
+	}
+
+	(previous[size] ??= {})[combinationsAmount] = result;
+
+	await writeFile(jsonOutPath, JSON.stringify(previous, undefined, '\t'));
+	await writeCsv(previous);
 };
