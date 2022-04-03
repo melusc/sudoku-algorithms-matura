@@ -5,7 +5,7 @@ import Papa from 'papaparse';
 import type {CombinationsResults} from '../try-combinations.js';
 import {BetterMap} from '../utils.js';
 
-import {outDir, pluginsSeperator} from './utils.js';
+import {outDir, pluginsSeparator} from './utils.js';
 
 const jsonOutPath = new URL('rounds.json', outDir);
 const csvOutPath = new URL('rounds.csv', outDir);
@@ -32,7 +32,7 @@ const toCsv = (input: Rounds): string => {
 				result.push({
 					size,
 					amount,
-					plugins: plugins.join(pluginsSeperator),
+					plugins: plugins.join(pluginsSeparator),
 					avg,
 					least,
 				});
@@ -72,10 +72,10 @@ export const rounds = async (
 	};
 
 	for (const {rounds, plugins} of [...solved.values()].flat()) {
-		const pluginsKey = plugins.join(pluginsSeperator);
+		const pluginsKey = plugins.join(pluginsSeparator);
 		setIfLower(pluginsKey, rounds);
 
-		const pluginsAvg = avg.get(plugins.join(pluginsSeperator));
+		const pluginsAvg = avg.get(plugins.join(pluginsSeparator));
 		++pluginsAvg.count;
 		pluginsAvg.total += rounds;
 
@@ -95,7 +95,7 @@ export const rounds = async (
 
 	for (const [key, {total, count}] of avg) {
 		values.push({
-			plugins: key.split(pluginsSeperator),
+			plugins: key.split(pluginsSeparator),
 			avg: total / count,
 			least: leastByPlugin.get(key),
 		});
