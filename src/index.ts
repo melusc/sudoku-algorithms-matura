@@ -1,8 +1,6 @@
 import {stats} from './stats/index.js';
 
-let i = 0;
-await stats(++i);
-await stats(++i);
-await stats(++i);
-await stats(++i);
-await stats(++i);
+for (let i = 1; i <= 5; ++i) {
+	// eslint-disable-next-line no-await-in-loop
+	await stats(i);
+}
