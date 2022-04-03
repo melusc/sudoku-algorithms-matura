@@ -161,12 +161,14 @@ const log = createLogUpdate(process.stdout, {
 const getUrl = (size: number, combinationsAmount: number) =>
 	new URL(`${size}-${combinationsAmount}.json`, outDir);
 
-export type SolvedValues = Array<{
+export type SolvedValue = {
 	plugins: PluginKeys[];
 	rounds: number;
 	packageRounds: number;
-}>;
-export type UnsolvedValues = Array<{
+};
+export type SolvedValues = SolvedValue[];
+
+export type UnsolvedValue = {
 	plugins: PluginKeys[];
 	result: string;
 	packageRounds: number;
@@ -180,7 +182,8 @@ export type UnsolvedValues = Array<{
 			relative: number;
 		};
 	};
-}>;
+};
+export type UnsolvedValues = UnsolvedValue[];
 export type CombinationsResults = {
 	solved: ReadonlyMap<string, SolvedValues>;
 	unsolved: ReadonlyMap<string, UnsolvedValues>;

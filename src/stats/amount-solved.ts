@@ -5,7 +5,7 @@ import Papa from 'papaparse';
 import type {CombinationsResults} from '../try-combinations.js';
 import {BetterMap} from '../utils.js';
 
-import {outDir, pluginsSeparator} from './utils.js';
+import {eachSolved, outDir, pluginsSeparator} from './utils.js';
 
 const jsonOutPath = new URL('amount-solved.json', outDir);
 const csvOutPath = new URL('amount-solved.csv', outDir);
@@ -49,19 +49,19 @@ const writeCsv = async (input: AmountSolved): Promise<void> => {
 const previous: AmountSolved = {};
 
 export const amountSolved = async (
-	{solved, combinationsAmount}: CombinationsResults,
+	combinations: CombinationsResults,
 	size: number,
 ): Promise<void> => {
-	const amount = new BetterMap<string, number>(() => 0);
-	for (const allPlugins of solved.values()) {
-		for (const {plugins} of allPlugins) {
-			const key = plugins.join(pluginsSeparator);
-			amount.set(key, amount.get(key) + 1);
+	const {combinationsAmount} = combinations;
 
-			if (plugins.length > 1) {
-				for (const plugin of plugins) {
-					amount.set(plugin, amount.get(plugin) + 1);
-				}
+	const amount = new BetterMap<string, number>(() => 0);
+	for (const {plugins} of eachSolved(combinations)) {
+		const key = plugins.join(pluginsSeparator);
+		amount.set(key, amount.get(key) + 1);
+
+		if (plugins.length > 1) {
+			for (const plugin of plugins) {
+				amount.set(plugin, amount.get(plugin) + 1);
 			}
 		}
 	}

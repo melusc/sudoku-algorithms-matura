@@ -11,4 +11,4 @@
   - Rate absolutely, only looking at amount of missing numbers?
   - Rate by how many rounds it would take for `@lusc/sudoku` to finish it?
 - Rank plugins by how many rounds it takes to solve a sudoku?
-- CSV / JSON for unsolved `amount-solved` & `rounds`.
+- CSV / JSON for unsolved `rounds`.
