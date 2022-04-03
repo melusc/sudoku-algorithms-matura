@@ -28,5 +28,5 @@ jobs:
       # - name: CI tests
       #   run: yarn run test
 
-      # - name: Type checking
-      #   run: yarn tsc --noEmit
+      - name: Type checking
+        run: yarn build
