@@ -1,3 +1,4 @@
+import {mkdir, rm} from 'node:fs/promises';
 import {
 	CombinationsResults,
 	SolvedValue,
@@ -5,6 +6,9 @@ import {
 } from '../try-combinations.js';
 
 export const outDir = new URL('../../data/stats/', import.meta.url);
+
+await rm(outDir, {recursive: true, force: true});
+await mkdir(outDir, {recursive: true});
 
 export const pluginsSeparator = '|';
 
