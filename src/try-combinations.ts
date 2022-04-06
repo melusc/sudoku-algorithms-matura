@@ -69,9 +69,7 @@ function * everyCombination(
 	for (let i = offset; i < keys.length; ++i) {
 		const pluginName = keys[i]!;
 
-		if (!previous.includes(pluginName)) {
-			yield * everyCombination(size - 1, i + 1, [...previous, pluginName]);
-		}
+		yield * everyCombination(size - 1, i + 1, [...previous, pluginName]);
 	}
 }
 
@@ -79,7 +77,7 @@ const completenessCalculator = (
 	sudoku: Sudoku,
 	previousSudoku: Sudoku,
 ): {
-	completeness: UnsolvedValues[number]['completeness'];
+	completeness: UnsolvedValue['completeness'];
 } => {
 	const {size, getCells} = sudoku;
 	let withCandidatesAbsolute = 0;
