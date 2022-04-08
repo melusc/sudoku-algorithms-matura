@@ -15,40 +15,42 @@ type SudokuWithInternals = Sudoku & {
 };
 
 const completenessNumber = ow.number.finite.inRange(0, 1);
-const validators = {
-	solved: ow.create(
-		ow.map.keysOfType(ow.string).valuesOfType(
-			ow.array.ofType(
-				ow.object.exactShape({
-					plugins: ow.array.ofType(ow.string),
-					rounds: ow.number,
-					packageRounds: ow.number,
-				}),
-			),
-		),
-	),
-	unsolved: ow.create(
-		ow.map.keysOfType(ow.string).valuesOfType(
-			ow.array.ofType(
-				ow.object.exactShape({
-					plugins: ow.array.ofType(ow.string),
-					result: ow.string,
-					packageRounds: ow.number,
-					completeness: ow.object.exactShape({
-						withCandidates: ow.object.exactShape({
-							relative: completenessNumber,
-							absolute: completenessNumber,
+const validator = (size: number, map: Map<any, any>) => {
+	ow(
+		map,
+		ow.map
+			.keysOfType(ow.string)
+			.size(size)
+			.valuesOfType(
+				ow.array.ofType(
+					ow.any(
+						ow.object.exactShape({
+							type: ow.string.equals('solved'),
+							plugins: ow.array.ofType(ow.string),
+							rounds: ow.number,
+							packageRounds: ow.number,
 						}),
-						noCandidates: ow.object.exactShape({
-							relative: completenessNumber,
-							absolute: completenessNumber,
+						ow.object.exactShape({
+							type: ow.string.equals('unsolved'),
+							plugins: ow.array.ofType(ow.string),
+							result: ow.string,
+							packageRounds: ow.number,
+							completeness: ow.object.exactShape({
+								withCandidates: ow.object.exactShape({
+									relative: completenessNumber,
+									absolute: completenessNumber,
+								}),
+								noCandidates: ow.object.exactShape({
+									relative: completenessNumber,
+									absolute: completenessNumber,
+								}),
+							}),
 						}),
-					}),
-				}),
+					),
+				),
 			),
-		),
-	),
-} as const;
+	);
+};
 
 type Plugins = typeof plugins;
 type PluginKeys = keyof Plugins;
@@ -160,6 +162,7 @@ const getUrl = (size: number, combinationsAmount: number) =>
 	new URL(`${size}-${combinationsAmount}.json`, outDir);
 
 export type SolvedValue = {
+	type: 'solved';
 	plugins: PluginKeys[];
 	rounds: number;
 	packageRounds: number;
@@ -167,6 +170,7 @@ export type SolvedValue = {
 export type SolvedValues = SolvedValue[];
 
 export type UnsolvedValue = {
+	type: 'unsolved';
 	plugins: PluginKeys[];
 	result: string;
 	packageRounds: number;
@@ -182,23 +186,25 @@ export type UnsolvedValue = {
 	};
 };
 export type UnsolvedValues = UnsolvedValue[];
+
+type CombinationEntry = SolvedValue | UnsolvedValue;
+
 export type CombinationsResults = {
-	solved: ReadonlyMap<string, SolvedValues>;
-	unsolved: ReadonlyMap<string, UnsolvedValues>;
 	combinationsAmount: number;
+	combinations: ReadonlyMap<string, CombinationEntry[]>;
 };
 
 export const doTryCombinations = async (
 	size: number,
 	combinationsAmount: number,
 	sudokus: readonly Sudoku[],
+	amountSudokus: number,
 ): Promise<CombinationsResults> => {
 	const logProgress = (i: number) => {
 		log(`${size}-${combinationsAmount} (${i} / ${sudokus.length})`);
 	};
 
-	const solvedByKey = new BetterMap<string, SolvedValues>(() => []);
-	const unsolvedByKey = new BetterMap<string, UnsolvedValues>(() => []);
+	const byKey = new BetterMap<string, CombinationEntry[]>(() => []);
 
 	for (const [i, sudoku] of sudokus.entries()) {
 		logProgress(i);
@@ -210,39 +216,43 @@ export const doTryCombinations = async (
 
 		for (const pluginKeys of everyCombination(combinationsAmount)) {
 			const {solvedSudoku, pluginsUsed, rounds} = solve(sudoku, pluginKeys);
+
+			let result: CombinationEntry;
+
 			if (solvedSudoku.isSolved()) {
-				solvedByKey
-					.get(stringified)
-					.push({plugins: pluginsUsed, rounds, packageRounds});
+				result = {
+					type: 'solved',
+					plugins: pluginsUsed,
+					rounds,
+					packageRounds,
+				};
 			} else {
-				unsolvedByKey.get(stringified).push({
+				result = {
+					type: 'unsolved',
 					plugins: pluginsUsed,
 					result: solvedSudoku.toString().trimEnd(),
 					packageRounds,
 					...completenessCalculator(solvedSudoku, sudoku),
-				});
+				};
 			}
+
+			byKey.get(stringified).push(result);
 		}
 	}
 
 	logProgress(sudokus.length);
 	log.done();
 
-	validators.solved(solvedByKey);
-	validators.unsolved(unsolvedByKey);
+	validator(amountSudokus, byKey);
 
 	await writeFile(
 		getUrl(size, combinationsAmount),
-		JSON.stringify({
-			solved: Object.fromEntries(solvedByKey),
-			unsolved: Object.fromEntries(unsolvedByKey),
-		}),
+		JSON.stringify(Object.fromEntries(byKey)),
 	);
 
 	return {
-		solved: solvedByKey,
-		unsolved: unsolvedByKey,
 		combinationsAmount,
+		combinations: byKey,
 	};
 };
 
@@ -250,39 +260,38 @@ export const tryCombinations = async (
 	size: number,
 	combinationsAmount: number,
 	getSudokus: () => Promise<readonly Sudoku[]>,
+	amountSudokus: number,
 ): Promise<CombinationsResults> => {
 	try {
 		const {
-			default: {solved, unsolved},
+			default: combinations,
 			// eslint-disable-next-line node/no-unsupported-features/es-syntax
 		} = (await import(getUrl(size, combinationsAmount).href, {
 			assert: {
 				type: 'json',
 			},
 		})) as {
-			default: {
-				solved: Record<string, SolvedValues>;
-				unsolved: Record<string, UnsolvedValues>;
-			};
+			default: Record<string, CombinationEntry[]>;
 		};
 
-		const solvedMap = new Map(Object.entries(solved));
-		const unsolvedMap = new Map(Object.entries(unsolved));
-
-		validators.solved(solvedMap);
-		validators.unsolved(unsolvedMap);
+		const combinationsMap = new Map(Object.entries(combinations));
+		validator(amountSudokus, combinationsMap);
 
 		console.log('%d-%d (Cached)', size, combinationsAmount);
 
 		return {
-			solved: solvedMap as ReadonlyMap<string, SolvedValues>,
-			unsolved: unsolvedMap as ReadonlyMap<string, UnsolvedValues>,
 			combinationsAmount,
+			combinations: combinationsMap as ReadonlyMap<string, CombinationEntry[]>,
 		};
 	} catch (error: unknown) {
 		console.log(error);
 		console.log('%d-%d (Error reading cache)', size, combinationsAmount);
 
-		return doTryCombinations(size, combinationsAmount, await getSudokus());
+		return doTryCombinations(
+			size,
+			combinationsAmount,
+			await getSudokus(),
+			amountSudokus,
+		);
 	}
 };

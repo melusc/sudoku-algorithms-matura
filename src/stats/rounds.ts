@@ -8,12 +8,14 @@ import {BetterMap} from '../utils.js';
 import {
 	eachSolved,
 	calculateMedian,
-	outDir,
 	pluginsSeparator,
+	makePaths,
+	makeAvgMap,
+	calcAvg,
+	Avg,
 } from './utils.js';
 
-const jsonOutPath = new URL('rounds.json', outDir);
-const csvOutPath = new URL('rounds.csv', outDir);
+const {jsonOutPath, csvOutPath} = makePaths('rounds');
 
 type RoundsValue = {
 	plugins: string[];
@@ -22,6 +24,7 @@ type RoundsValue = {
 	median: number;
 	min: number;
 	max: number;
+	packageRoundsAvg: number;
 };
 type Rounds = Record<number, Record<number, RoundsValue[]>>;
 
@@ -58,16 +61,6 @@ const writeCsv = async (input: Rounds): Promise<void> => {
 
 const previous: Rounds = {};
 
-type Avg = {total: number; count: number};
-
-const makeAvgMap = () =>
-	new BetterMap<string, Avg>(() => ({
-		total: 0,
-		count: 0,
-	}));
-
-const calcAvg = ({total, count}: Avg) => total / count;
-
 export const rounds = async (
 	combinations: CombinationsResults,
 	size: number,
@@ -80,6 +73,7 @@ export const rounds = async (
 		min: Number.POSITIVE_INFINITY,
 	}));
 	const allRounds = new BetterMap<string, number[]>(() => []);
+	const packageRoundsAvg = makeAvgMap();
 
 	const setExtremes = (key: string, value: number) => {
 		const previous = extremes.get(key);
@@ -92,24 +86,25 @@ export const rounds = async (
 		}
 	};
 
-	const addAverage = (key: string, rounds: number) => {
-		const pluginsAvg = averages.get(key);
-		++pluginsAvg.count;
-		pluginsAvg.total += rounds;
+	const addAverage = (avg: Avg, rounds: number) => {
+		++avg.count;
+		avg.total += rounds;
 	};
 
-	for (const {rounds, plugins} of eachSolved(combinations)) {
+	for (const {rounds, plugins, packageRounds} of eachSolved(combinations)) {
 		const pluginsKey = plugins.join(pluginsSeparator);
 		setExtremes(pluginsKey, rounds);
-		addAverage(pluginsKey, rounds);
+		addAverage(averages.get(pluginsKey), rounds);
 		allRounds.get(pluginsKey).push(rounds);
+		addAverage(packageRoundsAvg.get(pluginsKey), packageRounds);
 
 		// Technically not necessary, since the result wouldn't change
 		if (plugins.length > 1) {
 			for (const plugin of plugins) {
 				setExtremes(plugin, rounds);
-				addAverage(plugin, rounds);
+				addAverage(averages.get(plugin), rounds);
 				allRounds.get(plugin).push(rounds);
+				addAverage(packageRoundsAvg.get(plugin), packageRounds);
 			}
 		}
 	}
@@ -141,6 +136,7 @@ export const rounds = async (
 			scatter: calcAvg(scatter.get(key)),
 			median: calculateMedian(allRounds.get(key)),
 			...extremes.get(key),
+			packageRoundsAvg: calcAvg(packageRoundsAvg.get(key)),
 		});
 	}
 

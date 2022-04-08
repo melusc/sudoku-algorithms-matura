@@ -5,10 +5,15 @@ import Papa from 'papaparse';
 import type {CombinationsResults} from '../try-combinations.js';
 import {BetterMap} from '../utils.js';
 
-import {eachSolved, outDir, pluginsSeparator} from './utils.js';
+import {
+	amountPlugins,
+	eachSolved,
+	makePaths,
+	nCr,
+	pluginsSeparator,
+} from './utils.js';
 
-const jsonOutPath = new URL('amount-solved.json', outDir);
-const csvOutPath = new URL('amount-solved.csv', outDir);
+const {jsonOutPath, csvOutPath} = makePaths('amount-solved');
 
 type AmountSolvedValue = {
 	plugins: string[];
@@ -68,11 +73,20 @@ export const amountSolved = async (
 
 	const result: AmountSolvedValue[] = [];
 
-	for (const [plugins, amountSolved] of amount) {
-		result.push({
-			plugins: plugins.split(pluginsSeparator),
-			amountSolved,
-		});
+	for (const [pluginsString, amountSolved] of amount) {
+		const plugins = pluginsString.split(pluginsSeparator);
+
+		if (combinationsAmount > 1 && plugins.length === 1) {
+			result.push({
+				plugins,
+				amountSolved: amountSolved / nCr(amountPlugins, combinationsAmount),
+			});
+		} else {
+			result.push({
+				plugins,
+				amountSolved,
+			});
+		}
 	}
 
 	(previous[size] ??= {})[combinationsAmount] = result;
