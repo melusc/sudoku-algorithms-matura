@@ -52,10 +52,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@lusc/sudoku@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@lusc/sudoku/-/sudoku-2.5.0.tgz#582428f9c6b9ee4a08a7d17a67418391f80fc0c9"
-  integrity sha512-wKeiwhN2bNjxYy+ZhBhzoAMiko7FnExPkBXInPILMIVAFKmNjpw27QceE8VQMrw+/6nHO/0fwJkNMCX0BlfeKQ==
+"@lusc/sudoku@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@lusc/sudoku/-/sudoku-2.6.0.tgz#2cf1e925b3149bc19592526a493fe9715a9fa73f"
+  integrity sha512-hgmk1LHBMSnbw11GZ6E98VlpJKDsrP1scUPB/LXvcai2dwXP8IfbUCr7qiS49IYfnYLvljy6cK/TKW6AbtQWLg==
 
 "@lusc/tsconfig@^1.0.0":
   version "1.0.0"
