@@ -7,7 +7,7 @@
 	"private": true,
 	"dependencies": {
 		"@lusc/sudoku": "^2.6.0",
-		"log-update": "^5.0.0",
+		"log-update": "^5.0.1",
 		"ow": "^0.28.1",
 		"papaparse": "^5.3.2"
 	},

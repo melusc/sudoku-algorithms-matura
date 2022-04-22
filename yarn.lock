@@ -1703,14 +1703,15 @@ log-symbols@^4.0.0:
     chalk "^4.1.0"
     is-unicode-supported "^0.1.0"
 
-log-update@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/log-update/-/log-update-5.0.0.tgz#e36011f941665b25c2a5585cefdddd399c910c30"
-  integrity sha512-HovF3knyZX9sleS0OkSJ6f53JEpbzcbomC6/WJ3iuGK8i6CRb6WZ542gO2F3pdQK8hwlijddDefVFhlMpwkOSQ==
+log-update@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/log-update/-/log-update-5.0.1.tgz#9e928bf70cb183c1f0c9e91d9e6b7115d597ce09"
+  integrity sha512-5UtUDQ/6edw4ofyljDNcOVJQ4c7OjDro4h3y8e1GQL5iYElYclVHJ3zeWchylvMaKnDbDilC8irOVyexnA/Slw==
   dependencies:
     ansi-escapes "^5.0.0"
     cli-cursor "^4.0.0"
     slice-ansi "^5.0.0"
+    strip-ansi "^7.0.1"
     wrap-ansi "^8.0.1"
 
 lowercase-keys@^1.0.0:
