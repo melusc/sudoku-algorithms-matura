@@ -9,7 +9,7 @@ for (let i = 1; i <= 5; ++i) {
 		// eslint-disable-next-line no-await-in-loop
 		const combinations = await tryCombinations(
 			size,
-			sudokuAmount,
+			i,
 			async () => getSudokus(sudokuAmount, size),
 			sudokuAmount,
 		);
