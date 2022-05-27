@@ -2,7 +2,8 @@
 	"extends": "@lusc/tsconfig",
 	"compilerOptions": {
 		"outDir": "dist",
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "nodenext"
 	},
 	"include": ["src/**/*.ts"]
 }

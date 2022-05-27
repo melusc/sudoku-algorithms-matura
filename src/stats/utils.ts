@@ -1,6 +1,6 @@
 import {mkdir, rm} from 'node:fs/promises';
 
-import * as plugins from '@lusc/sudoku/dist/lib/plugins/index.js';
+import * as plugins from '@lusc/sudoku/plugins';
 
 import {
 	CombinationsResults,

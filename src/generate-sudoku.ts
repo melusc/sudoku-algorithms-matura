@@ -37,14 +37,13 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 	sudoku.solve();
 
 	sudoku.shouldLogErrors = false;
-	sudoku.mode = 'fast';
 
 	/**
 	 * For the given index try randomly from
 	 * `possibles` until one is valid
 	 */
 	const tryFillCell = (index: number): void => {
-		if (sudoku.getContent(index) !== undefined) {
+		if (sudoku.getElement(index) !== undefined) {
 			return;
 		}
 
@@ -53,7 +52,7 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 		for (const randNumber of randomArrayItem(candidates)) {
 			const newSudoku = sudoku.clone();
 
-			newSudoku.setContent(index, randNumber);
+			newSudoku.setElement(index, randNumber);
 
 			if (newSudoku.solve() !== 'error' && newSudoku.isValid()) {
 				sudoku = newSudoku;
@@ -71,7 +70,6 @@ export const generateFilledSudoku = (size: number): Sudoku => {
 
 	console.timeEnd('generateFilledSudoku');
 
-	sudoku.mode = 'thorough';
 	if (sudoku.isSolved() && sudoku.isValid()) {
 		return sudoku;
 	}
@@ -88,15 +86,15 @@ export const generateSudoku = (size: number): Sudoku => {
 
 	const filledSudoku = generateFilledSudoku(size);
 
-	const cells = filledSudoku.getCells().map((c, i) => [c.content!, i] as const);
+	const cells = filledSudoku.getCells().map((c, i) => [c.element!, i] as const);
 
 	const mutatingSudoku = new Sudoku(size);
 
 	for (const [content, index] of randomArrayItem(cells)) {
-		if (mutatingSudoku.getCell(index).content === content) {
+		if (mutatingSudoku.getCell(index).element === content) {
 			filledSudoku.clearCell(index);
 		} else {
-			mutatingSudoku.setContent(index, content).solve();
+			mutatingSudoku.setElement(index, content).solve();
 		}
 	}
 

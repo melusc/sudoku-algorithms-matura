@@ -2,7 +2,7 @@ import process from 'node:process';
 import {mkdir, writeFile} from 'node:fs/promises';
 
 import {Sudoku} from '@lusc/sudoku';
-import * as plugins from '@lusc/sudoku/dist/lib/plugins/index.js';
+import * as plugins from '@lusc/sudoku/plugins';
 import {createLogUpdate} from 'log-update';
 import {BetterMap, ow} from './utils.js';
 
@@ -90,16 +90,16 @@ const completenessCalculator = (
 	let previousNumberCount = 0;
 
 	for (const cell of getCells()) {
-		const noCandidates = cell.content === undefined ? 0 : 1;
+		const noCandidates = cell.element === undefined ? 0 : 1;
 
 		withCandidatesAbsolute
-			+= cell.content === undefined ? size - cell.candidates.size : size;
+			+= cell.element === undefined ? size - cell.candidates.size : size;
 		noCandidatesAbsolute += noCandidates;
 
 		const previousCell = previousSudoku.getCell(cell.index);
-		if (previousCell.content === undefined) {
+		if (previousCell.element === undefined) {
 			withCandidatesRelative
-				+= cell.content === undefined
+				+= cell.element === undefined
 					? previousCell.candidates.size - cell.candidates.size
 					: size;
 			noCandidatesRelative += noCandidates;
