@@ -3,9 +3,7 @@ import assert from 'node:assert/strict';
 
 import {Sudoku} from '@lusc/sudoku';
 
-function * randomArrayItem<T>(
-	array: T[],
-): Iterable<T> {
+function * randomArrayItem<T>(array: T[]): Iterable<T> {
 	while (array.length > 0) {
 		const randIndex = randomInt(array.length);
 		const item = array[randIndex]!;
