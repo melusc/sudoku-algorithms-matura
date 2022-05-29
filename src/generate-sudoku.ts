@@ -5,11 +5,8 @@ import {Sudoku} from '@lusc/sudoku';
 
 function * randomArrayItem<T>(
 	array: T[],
-	shouldContinue?: () => boolean,
 ): Iterable<T> {
-	shouldContinue ??= () => true;
-
-	while (array.length > 0 && shouldContinue()) {
+	while (array.length > 0) {
 		const randIndex = randomInt(array.length);
 		const item = array[randIndex]!;
 		array.splice(randIndex, 1);
