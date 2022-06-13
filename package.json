@@ -8,7 +8,7 @@
 	"dependencies": {
 		"@lusc/sudoku": "^2.7.0",
 		"log-update": "^5.0.1",
-		"ow": "^0.28.1",
+		"ow": "^1.0.0",
 		"papaparse": "^5.3.2"
 	},
 	"engines": {

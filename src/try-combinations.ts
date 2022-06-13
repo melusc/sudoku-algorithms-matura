@@ -4,7 +4,9 @@ import {mkdir, writeFile} from 'node:fs/promises';
 import {Sudoku} from '@lusc/sudoku';
 import * as plugins from '@lusc/sudoku/plugins';
 import {createLogUpdate} from 'log-update';
-import {BetterMap, ow} from './utils.js';
+import ow from 'ow';
+
+import {BetterMap} from './utils.js';
 
 const outDir = new URL('../data/combinations/', import.meta.url);
 await mkdir(outDir, {recursive: true});

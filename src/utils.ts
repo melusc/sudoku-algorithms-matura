@@ -1,5 +1,3 @@
-import ow_, {Ow} from 'ow';
-
 /**
  * Remove the pain of
  * @example
@@ -30,5 +28,3 @@ export class BetterMap<K, V> extends Map<K, V> {
 		return defaultvalue;
 	}
 }
-
-export const ow: Ow = (ow_ as any).default as Ow;
