@@ -266,13 +266,14 @@ export const tryCombinations = async (
 	amountSudokus: number,
 ): Promise<CombinationsResults> => {
 	try {
-		const {
-			default: combinations,
-		} = (await import(getUrl(size, combinationsAmount).href, {
-			assert: {
-				type: 'json',
-			},
-		})) as {
+		const {default: combinations} = (await import(
+			getUrl(size, combinationsAmount).href,
+			{
+				assert: {
+					type: 'json',
+				},
+			}
+		)) as {
 			default: Record<string, CombinationEntry[]>;
 		};
 
