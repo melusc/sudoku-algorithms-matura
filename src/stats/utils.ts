@@ -1,5 +1,6 @@
 import {mkdir, rm} from 'node:fs/promises';
 
+// eslint-disable-next-line n/file-extension-in-import
 import * as plugins from '@lusc/sudoku/plugins';
 
 import {

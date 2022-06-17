@@ -2,6 +2,7 @@ import process from 'node:process';
 import {mkdir, writeFile} from 'node:fs/promises';
 
 import {Sudoku} from '@lusc/sudoku';
+// eslint-disable-next-line n/file-extension-in-import
 import * as plugins from '@lusc/sudoku/plugins';
 import {createLogUpdate} from 'log-update';
 import ow from 'ow';
@@ -267,7 +268,6 @@ export const tryCombinations = async (
 	try {
 		const {
 			default: combinations,
-			// eslint-disable-next-line node/no-unsupported-features/es-syntax
 		} = (await import(getUrl(size, combinationsAmount).href, {
 			assert: {
 				type: 'json',
