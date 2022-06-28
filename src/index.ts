@@ -15,6 +15,6 @@ for (let i = 1; i <= 5; ++i) {
 		);
 
 		// eslint-disable-next-line no-await-in-loop
-		await Promise.all([stats(combinations, size)]);
+		await stats(combinations, size);
 	}
 }
