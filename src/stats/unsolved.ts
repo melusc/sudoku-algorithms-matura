@@ -3,15 +3,14 @@ import {writeFile} from 'node:fs/promises';
 import Papa from 'papaparse';
 
 import {CombinationsResults} from '../try-combinations.js';
-import {BetterMap} from '../utils.js';
+import {BetterMap, PluginKeys} from '../utils.js';
 import {
-	amountPlugins,
+	amountPluginInCombination,
 	Avg,
 	calcAvg,
 	eachUnsolved,
 	makeAvgMap,
 	makePaths,
-	nCr,
 	pluginsSeparator,
 } from './utils.js';
 
@@ -115,7 +114,12 @@ export const unsolved = async (
 
 		if (combinationsAmount > 1 && plugins.length === 1) {
 			result.push({
-				amountUnsolved: amountUnsolved / nCr(amountPlugins, combinationsAmount),
+				amountUnsolved:
+					amountUnsolved
+					/ amountPluginInCombination(
+						plugins[0]! as PluginKeys,
+						combinationsAmount,
+					),
 				...rest,
 			});
 		} else {

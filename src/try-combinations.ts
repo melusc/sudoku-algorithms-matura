@@ -7,7 +7,7 @@ import * as plugins from '@lusc/sudoku/plugins';
 import {createLogUpdate} from 'log-update';
 import ow from 'ow';
 
-import {BetterMap} from './utils.js';
+import {BetterMap, everyCombination, PluginKeys} from './utils.js';
 
 const outDir = new URL('../data/combinations/', import.meta.url);
 await mkdir(outDir, {recursive: true});
@@ -55,28 +55,7 @@ const validator = (size: number, map: Map<any, any>) => {
 	);
 };
 
-type Plugins = typeof plugins;
-type PluginKeys = keyof Plugins;
 // Type PluginValues = Plugins[PluginKeys];
-
-function * everyCombination(
-	size: number,
-	offset = 0,
-	previous: PluginKeys[] = [],
-): Iterable<PluginKeys[]> {
-	if (size === 0) {
-		yield previous;
-		return;
-	}
-
-	const keys = Object.keys(plugins) as PluginKeys[];
-
-	for (let i = offset; i < keys.length; ++i) {
-		const pluginName = keys[i]!;
-
-		yield * everyCombination(size - 1, i + 1, [...previous, pluginName]);
-	}
-}
 
 const completenessCalculator = (
 	sudoku: Sudoku,
