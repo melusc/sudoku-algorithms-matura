@@ -20,12 +20,12 @@ const {jsonOutPath, csvOutPath} = makePaths('rounds');
 
 type RoundsValue = {
 	plugins: string[];
-	avg: number;
-	scatter: number;
+	avg: string;
+	scatter: string;
 	median: number;
 	min: number;
 	max: number;
-	packageRoundsAvg: number;
+	packageRoundsAvg: string;
 };
 type Rounds = Record<number, Record<number, RoundsValue[]>>;
 
@@ -133,11 +133,11 @@ export const rounds = async (
 	for (const [key, avg] of averages) {
 		values.push({
 			plugins: key.split(pluginsSeparator),
-			avg: calcAvg(avg),
-			scatter: calcAvg(scatter.get(key)),
+			avg: calcAvg(avg).toFixed(2),
+			scatter: calcAvg(scatter.get(key)).toFixed(2),
 			median: calculateMedian(allRounds.get(key)),
 			...extremes.get(key),
-			packageRoundsAvg: calcAvg(packageRoundsAvg.get(key)),
+			packageRoundsAvg: calcAvg(packageRoundsAvg.get(key)).toFixed(2),
 		});
 	}
 

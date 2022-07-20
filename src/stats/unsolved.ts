@@ -19,10 +19,10 @@ const {jsonOutPath, csvOutPath} = makePaths('unsolved');
 
 type Unsolved = {
 	plugins: string[];
-	amountUnsolved: number;
-	completenessWithCandidates: number;
-	completenessNoCandidates: number;
-	packageRounds: number;
+	amountUnsolved: string;
+	completenessWithCandidates: string;
+	completenessNoCandidates: string;
+	packageRounds: string;
 };
 type UnsolvedRecord = Record<number, Record<number, Unsolved[]>>;
 
@@ -108,20 +108,25 @@ export const unsolved = async (
 
 		const rest: Omit<Unsolved, 'amountUnsolved'> = {
 			plugins,
-			completenessNoCandidates: calcAvg(avgNoCandidates.get(pluginsString)),
-			completenessWithCandidates: calcAvg(avgWithCandidates.get(pluginsString)),
-			packageRounds: calcAvg(packageRoundsAvg.get(pluginsString)),
+			completenessNoCandidates: calcAvg(
+				avgNoCandidates.get(pluginsString),
+			).toFixed(2),
+			completenessWithCandidates: calcAvg(
+				avgWithCandidates.get(pluginsString),
+			).toFixed(2),
+			packageRounds: calcAvg(packageRoundsAvg.get(pluginsString)).toFixed(2),
 		};
 
 		if (combinationsAmount > 1 && plugins.length === 1) {
 			result.push({
-				amountUnsolved:
-					amountUnsolved / amountPluginInCombination(combinationsAmount),
+				amountUnsolved: (
+					amountUnsolved / amountPluginInCombination(combinationsAmount)
+				).toFixed(2),
 				...rest,
 			});
 		} else {
 			result.push({
-				amountUnsolved,
+				amountUnsolved: amountUnsolved.toString(),
 				...rest,
 			});
 		}
