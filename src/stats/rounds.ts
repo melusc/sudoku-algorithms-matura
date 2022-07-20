@@ -13,6 +13,7 @@ import {
 	makeAvgMap,
 	calcAvg,
 	Avg,
+	sortOutput,
 } from './utils.js';
 
 const {jsonOutPath, csvOutPath} = makePaths('rounds');
@@ -140,7 +141,7 @@ export const rounds = async (
 		});
 	}
 
-	values.sort((a, b) => b.plugins.length - a.plugins.length);
+	values.sort(sortOutput);
 
 	(previous[size] ??= {})[combinationsAmount] = values;
 

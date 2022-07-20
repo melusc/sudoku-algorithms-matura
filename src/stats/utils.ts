@@ -99,3 +99,14 @@ export const calcAvg = ({total, count}: Avg) => total / count;
 const pluginKeys = Object.keys(plugins);
 export const amountPluginInCombination = (size: number) =>
 	(size * nCr(pluginKeys.length, size)) / pluginKeys.length;
+
+type CsvResult = {
+	plugins: string[];
+};
+const collator = new Intl.Collator('en', {sensitivity: 'base'});
+export const sortOutput = (a: CsvResult, b: CsvResult) =>
+	b.plugins.length - a.plugins.length
+	|| collator.compare(
+		a.plugins.join(pluginsSeparator),
+		b.plugins.join(pluginsSeparator),
+	);

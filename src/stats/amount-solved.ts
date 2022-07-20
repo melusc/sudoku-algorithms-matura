@@ -10,6 +10,7 @@ import {
 	eachSolved,
 	makePaths,
 	pluginsSeparator,
+	sortOutput,
 } from './utils.js';
 
 const {jsonOutPath, csvOutPath} = makePaths('amount-solved');
@@ -88,6 +89,8 @@ export const amountSolved = async (
 			});
 		}
 	}
+
+	result.sort(sortOutput);
 
 	(previous[size] ??= {})[combinationsAmount] = result;
 

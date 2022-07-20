@@ -12,6 +12,7 @@ import {
 	makeAvgMap,
 	makePaths,
 	pluginsSeparator,
+	sortOutput,
 } from './utils.js';
 
 const {jsonOutPath, csvOutPath} = makePaths('unsolved');
@@ -125,6 +126,8 @@ export const unsolved = async (
 			});
 		}
 	}
+
+	result.sort(sortOutput);
 
 	(previous[size] ??= {})[combinationsAmount] = result;
 
