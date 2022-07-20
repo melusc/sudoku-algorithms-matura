@@ -3,7 +3,7 @@ import {writeFile} from 'node:fs/promises';
 import Papa from 'papaparse';
 
 import type {CombinationsResults} from '../try-combinations.js';
-import {BetterMap, PluginKeys} from '../utils.js';
+import {BetterMap} from '../utils.js';
 
 import {
 	amountPluginInCombination,
@@ -79,11 +79,7 @@ export const amountSolved = async (
 			result.push({
 				plugins,
 				amountSolved:
-					amountSolved
-					/ amountPluginInCombination(
-						plugins[0]! as PluginKeys,
-						combinationsAmount,
-					),
+					amountSolved / amountPluginInCombination(combinationsAmount),
 			});
 		} else {
 			result.push({

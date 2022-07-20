@@ -8,7 +8,7 @@ import {
 	SolvedValue,
 	UnsolvedValue,
 } from '../try-combinations.js';
-import {BetterMap, everyCombination, PluginKeys} from '../utils.js';
+import {BetterMap} from '../utils.js';
 
 export const outDir = new URL('../../data/stats/', import.meta.url);
 
@@ -96,14 +96,6 @@ export const makeAvgMap = () =>
 	}));
 export const calcAvg = ({total, count}: Avg) => total / count;
 
-// I couldn't find a mathematical way of calculating this
-export const amountPluginInCombination = (plugin: PluginKeys, size: number) => {
-	let amount = 0;
-	for (const plugins of everyCombination(size)) {
-		if (plugins.includes(plugin)) {
-			++amount;
-		}
-	}
-
-	return amount;
-};
+const pluginKeys = Object.keys(plugins);
+export const amountPluginInCombination = (size: number) =>
+	(size * nCr(pluginKeys.length, size)) / pluginKeys.length;
