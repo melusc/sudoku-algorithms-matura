@@ -55,9 +55,7 @@ const validator = (size: number, map: Map<any, any>) => {
 	);
 };
 
-// Type PluginValues = Plugins[PluginKeys];
-
-const completenessCalculator = (
+export const completenessCalculator = (
 	sudoku: Sudoku,
 	previousSudoku: Sudoku,
 ): {

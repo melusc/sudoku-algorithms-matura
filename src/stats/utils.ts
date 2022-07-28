@@ -38,11 +38,11 @@ export function * eachSolved(
 
 export function * eachUnsolved(
 	combinations: CombinationsResults,
-): Iterable<UnsolvedValue> {
-	for (const values of combinations.combinations.values()) {
+): Iterable<UnsolvedValue & {initial: string}> {
+	for (const [initial, values] of combinations.combinations) {
 		for (const value of values) {
 			if (value.type === 'unsolved') {
-				yield value;
+				yield {...value, initial};
 			}
 		}
 	}

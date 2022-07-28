@@ -1,8 +1,12 @@
 import {writeFile} from 'node:fs/promises';
 
+import {Sudoku} from '@lusc/sudoku';
 import Papa from 'papaparse';
 
-import {CombinationsResults} from '../try-combinations.js';
+import {
+	CombinationsResults,
+	completenessCalculator,
+} from '../try-combinations.js';
 import {BetterMap} from '../utils.js';
 import {
 	amountPluginInCombination,
@@ -23,6 +27,7 @@ type Unsolved = {
 	completenessWithCandidates: string;
 	completenessNoCandidates: string;
 	packageRounds: string;
+	packageCompletenessNoCandidates: string;
 };
 type UnsolvedRecord = Record<number, Record<number, Unsolved[]>>;
 
@@ -69,13 +74,14 @@ export const unsolved = async (
 	const avgWithCandidates = makeAvgMap();
 	const avgNoCandidates = makeAvgMap();
 	const packageRoundsAvg = makeAvgMap();
+	const packageAvgNoCandidates = makeAvgMap();
 
 	const addToAvg = (avg: Avg, n: number) => {
 		++avg.count;
 		avg.total += n;
 	};
 
-	for (const {plugins, completeness, packageRounds} of eachUnsolved(
+	for (const {plugins, completeness, packageRounds, initial} of eachUnsolved(
 		combinations,
 	)) {
 		const key = plugins.join(pluginsSeparator);
@@ -84,6 +90,16 @@ export const unsolved = async (
 
 		addToAvg(avgWithCandidates.get(key), completeness.withCandidates.absolute);
 		addToAvg(avgNoCandidates.get(key), completeness.noCandidates.absolute);
+
+		const initialSudoku = Sudoku.fromString(initial, size);
+		const initialSudokuCompleteness = completenessCalculator(
+			initialSudoku,
+			initialSudoku,
+		).completeness;
+		addToAvg(
+			packageAvgNoCandidates.get(key),
+			initialSudokuCompleteness.noCandidates.absolute,
+		);
 
 		if (plugins.length > 1) {
 			for (const plugin of plugins) {
@@ -96,6 +112,10 @@ export const unsolved = async (
 				addToAvg(
 					avgNoCandidates.get(plugin),
 					completeness.noCandidates.absolute,
+				);
+				addToAvg(
+					packageAvgNoCandidates.get(plugin),
+					initialSudokuCompleteness.noCandidates.absolute,
 				);
 			}
 		}
@@ -115,6 +135,9 @@ export const unsolved = async (
 				avgWithCandidates.get(pluginsString),
 			).toFixed(2),
 			packageRounds: calcAvg(packageRoundsAvg.get(pluginsString)).toFixed(2),
+			packageCompletenessNoCandidates: calcAvg(
+				packageAvgNoCandidates.get(pluginsString),
+			).toFixed(2),
 		};
 
 		if (combinationsAmount > 1 && plugins.length === 1) {
