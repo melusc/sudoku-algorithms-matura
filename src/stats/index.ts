@@ -16,3 +16,5 @@ export const stats = async (
 
 	await Promise.all(promises);
 };
+
+export {clean} from './utils.js';

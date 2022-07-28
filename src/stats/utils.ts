@@ -12,8 +12,10 @@ import {BetterMap} from '../utils.js';
 
 export const outDir = new URL('../../data/stats/', import.meta.url);
 
-await rm(outDir, {recursive: true, force: true});
-await mkdir(outDir, {recursive: true});
+export const clean = async () => {
+	await rm(outDir, {recursive: true, force: true});
+	await mkdir(outDir, {recursive: true});
+};
 
 export const pluginsSeparator = '|';
 
