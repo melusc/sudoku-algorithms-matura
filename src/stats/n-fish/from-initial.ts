@@ -31,7 +31,10 @@ const sudokuEqual = (s1: Sudoku, s2: Sudoku) =>
 			return cell1.element === cell2.element;
 		}
 
-		return cell1.candidates.size === cell2.candidates.size && [...cell1.candidates].every(candidate => cell2.candidates.has(candidate));
+		return (
+			cell1.candidates.size === cell2.candidates.size
+			&& [...cell1.candidates].every(candidate => cell2.candidates.has(candidate))
+		);
 	});
 
 const jsonifySudoku = (s: Sudoku) =>

@@ -105,7 +105,7 @@ export const amountPluginInCombination = (size: number) =>
 type CsvResult = {
 	plugins: string[];
 };
-const collator = new Intl.Collator('en', {sensitivity: 'base'});
+export const collator = new Intl.Collator('en', {sensitivity: 'base'});
 export const sortOutput = (a: CsvResult, b: CsvResult) =>
 	b.plugins.length - a.plugins.length
 	|| collator.compare(

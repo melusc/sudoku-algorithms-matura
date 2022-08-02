@@ -3,7 +3,7 @@ import {CombinationsResults} from '../try-combinations.js';
 import {amountSolved} from './amount-solved.js';
 import {rounds} from './rounds.js';
 import {unsolved} from './unsolved.js';
-import {nFishFromInitial} from './n-fish/index.js';
+import {nFishFromInitial, nFishStats} from './n-fish/index.js';
 
 export const stats = async (
 	combinations: CombinationsResults,
@@ -16,6 +16,7 @@ export const stats = async (
 		amountSolved,
 		unsolved,
 		nFishFromInitial,
+		nFishStats,
 	]) {
 		promises.push(fn(combinations, size));
 	}
