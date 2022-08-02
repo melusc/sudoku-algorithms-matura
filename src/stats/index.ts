@@ -3,6 +3,7 @@ import {CombinationsResults} from '../try-combinations.js';
 import {amountSolved} from './amount-solved.js';
 import {rounds} from './rounds.js';
 import {unsolved} from './unsolved.js';
+import {nFishFromInitial} from './n-fish/index.js';
 
 export const stats = async (
 	combinations: CombinationsResults,
@@ -10,7 +11,12 @@ export const stats = async (
 ) => {
 	const promises: Array<Promise<void>> = [];
 
-	for (const fn of [rounds, amountSolved, unsolved]) {
+	for (const fn of [
+		rounds,
+		amountSolved,
+		unsolved,
+		nFishFromInitial,
+	]) {
 		promises.push(fn(combinations, size));
 	}
 
