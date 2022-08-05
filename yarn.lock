@@ -57,10 +57,10 @@
   resolved "https://registry.yarnpkg.com/@lusc/sudoku/-/sudoku-3.0.0.tgz#ba3af1ec9a0ffd4a1f8baa711267afd9770a6041"
   integrity sha512-JWqtYMd5UM2FeMWgO85lGx7jR2ZsE2pJUk1uKNw3CxCnVKtJ533oFY/HDuqBRD1GwL40eSpzPwUM1VV2IL5Drw==
 
-"@lusc/tsconfig@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@lusc/tsconfig/-/tsconfig-1.2.2.tgz#eac329ef90a00f29b72c89ef08fe54c94d971b32"
-  integrity sha512-XbAa7aOF1RwLEj+REphp8TAsUCck+6I/yFaDm5EOmOyZME/vInSc4473ttqNRmoSt22Bto/kHSxw4YacUhOWgA==
+"@lusc/tsconfig@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@lusc/tsconfig/-/tsconfig-2.0.0.tgz#50b3a1521021a65ac9b7450a93d7bd95db1243a0"
+  integrity sha512-aAl1DNa3icSg/LKLyRLCLpKWjver51Bgj3nYo/prY2rujBWpquUM1irTD9niCWMqgAbPUGRdOY1AueedoNBOQQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
