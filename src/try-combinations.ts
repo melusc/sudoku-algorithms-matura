@@ -1,5 +1,5 @@
 import process from 'node:process';
-import {mkdir, writeFile} from 'node:fs/promises';
+import {mkdir, readFile, writeFile} from 'node:fs/promises';
 
 import {Sudoku} from '@lusc/sudoku';
 // eslint-disable-next-line n/file-extension-in-import
@@ -243,16 +243,14 @@ export const tryCombinations = async (
 	amountSudokus: number,
 ): Promise<CombinationsResults> => {
 	try {
-		const {default: combinations} = (await import(
-			getUrl(size, combinationsAmount).href,
-			{
-				assert: {
-					type: 'json',
-				},
-			}
-		)) as {
-			default: Record<string, CombinationEntry[]>;
-		};
+		const stringifiedCombinations = await readFile(
+			getUrl(size, combinationsAmount),
+			'utf8',
+		);
+		const combinations = JSON.parse(stringifiedCombinations) as Record<
+			string,
+			CombinationEntry[]
+		>;
 
 		const combinationsMap = new Map(Object.entries(combinations));
 		validator(amountSudokus, combinationsMap);
