@@ -49,6 +49,13 @@ For all sudokus that N-Fish and other plugins were able to solve:
 - How many matches did N-Fish find? (`totalMatches`)
 - How many matches did N-Fish that lead to candidates being removed? (`usefulMatches`)
 
+#### [`stats/pointing-arrows-no-element-arrow.json`]
+
+A list of sudokus solved by Pointing Arrows if elements weren't considered pointing arrows.
+
+- Size of the sudoku
+- Stringified, unsolved sudoku
+
 [`combinations/`]: ./combinations/
 [`generated/`]: ./generated/
 [`stats/`]: ./stats/
@@ -61,3 +68,4 @@ For all sudokus that N-Fish and other plugins were able to solve:
 [`stats/rounds.csv`]: ./stats/rounds.csv
 [`stats/n-fish-stats.csv`]: ./stats/n-fish-stats.csv
 [`stats/n-fish-from-initial.json`]: ./stats/n-fish-from-initial.json
+[`stats/pointing-arrows-no-element-arrow.json`]: ./stats/pointing-arrows-no-element-arrow.json
