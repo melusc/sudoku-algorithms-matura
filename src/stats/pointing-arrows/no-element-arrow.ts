@@ -5,7 +5,7 @@ import {Sudoku, Structure, Cell} from '@lusc/sudoku';
 import {CombinationsResults} from '../../try-combinations.js';
 import {makePaths} from '../utils.js';
 
-const {jsonOutPath} = makePaths('pointing-arrows-no-element');
+const {jsonOutPath} = makePaths('pointing-arrows-no-element-arrow');
 
 type SudokuInternal = Sudoku & {
 	blockWidth: number;
