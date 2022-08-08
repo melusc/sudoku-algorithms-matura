@@ -5,6 +5,7 @@ import {rounds} from './rounds.js';
 import {unsolved} from './unsolved.js';
 import {nFishFromInitial, nFishStats} from './n-fish/index.js';
 import {pointingArrowsNoElementArrow} from './pointing-arrows/index.js';
+import {fullHiddenPairsCompare} from './hidden-pairs/full-hidden-pairs-compare.js';
 
 export const stats = async (
 	combinations: CombinationsResults,
@@ -19,6 +20,7 @@ export const stats = async (
 		nFishFromInitial,
 		nFishStats,
 		pointingArrowsNoElementArrow,
+		fullHiddenPairsCompare,
 	]) {
 		promises.push(fn(combinations, size));
 	}
