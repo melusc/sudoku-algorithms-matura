@@ -56,6 +56,12 @@ A list of sudokus solved by Pointing Arrows if elements weren't considered point
 - Size of the sudoku
 - Stringified, unsolved sudoku
 
+#### [`stats/full-hidden-pairs-compare.json`]
+
+Using a complete version of Hidden Pairs, that can find all hidden pairs (by brute forcing all combinations):
+A list of sudokus that, when trying to solve with Hidden Pairs + Remove by Elemenets and Hidden Pairs,
+result in different outputs (different candidates, fewer or more elements).
+
 [`combinations/`]: ./combinations/
 [`generated/`]: ./generated/
 [`stats/`]: ./stats/
@@ -69,3 +75,4 @@ A list of sudokus solved by Pointing Arrows if elements weren't considered point
 [`stats/n-fish-stats.csv`]: ./stats/n-fish-stats.csv
 [`stats/n-fish-from-initial.json`]: ./stats/n-fish-from-initial.json
 [`stats/pointing-arrows-no-element-arrow.json`]: ./stats/pointing-arrows-no-element-arrow.json
+[`stats/full-hidden-pairs-compare.json`]: ./stats/full-hidden-pairs-compare.json
