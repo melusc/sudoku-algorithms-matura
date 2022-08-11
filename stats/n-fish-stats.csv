@@ -1,115 +1,295 @@
 size,amount,matchSize,plugins,usefulMatches,totalMatches
 9,1,1,nFish,28,100
-9,2,4,hiddenPairs|nFish,1957,5008
-9,2,7,hiddenPairs|nFish,220,403
-9,2,1,hiddenPairs|nFish,27889,49410
-9,2,6,hiddenPairs|nFish,496,925
-9,2,3,hiddenPairs|nFish,4470,13261
-9,2,2,hiddenPairs|nFish,11007,47268
-9,2,5,hiddenPairs|nFish,1021,2196
-9,2,8,hiddenPairs|nFish,23,55
-9,2,1,nFish|nakedPairs,28,94
-9,2,1,nFish|pointingArrows,12227,183935
-9,2,3,nFish|pointingArrows,1802,11227
-9,2,2,nFish|pointingArrows,5980,47667
-9,2,4,nFish|pointingArrows,1246,5088
-9,2,6,nFish|pointingArrows,424,1367
-9,2,5,nFish|pointingArrows,660,2209
-9,2,7,nFish|pointingArrows,287,797
-9,2,8,nFish|pointingArrows,31,107
-9,2,4,nFish|removeByElements,1712,11095
-9,2,7,nFish|removeByElements,8,1203
-9,2,1,nFish|removeByElements,22064,115097
-9,2,6,nFish|removeByElements,127,2788
-9,2,3,nFish|removeByElements,3562,20945
-9,2,5,nFish|removeByElements,758,6014
-9,2,2,nFish|removeByElements,7692,51235
-9,2,8,nFish|removeByElements,0,227
-9,3,4,hiddenPairs|nFish|nakedPairs,1780,4251
-9,3,7,hiddenPairs|nFish|nakedPairs,218,368
-9,3,1,hiddenPairs|nFish|nakedPairs,22662,40552
-9,3,6,hiddenPairs|nFish|nakedPairs,482,851
-9,3,3,hiddenPairs|nFish|nakedPairs,3887,10887
-9,3,2,hiddenPairs|nFish|nakedPairs,9305,37710
-9,3,5,hiddenPairs|nFish|nakedPairs,962,1895
-9,3,8,hiddenPairs|nFish|nakedPairs,23,52
-9,3,4,hiddenPairs|nFish|pointingArrows,1586,3530
-9,3,7,hiddenPairs|nFish|pointingArrows,216,349
-9,3,1,hiddenPairs|nFish|pointingArrows,20777,37687
-9,3,6,hiddenPairs|nFish|pointingArrows,465,771
-9,3,3,hiddenPairs|nFish|pointingArrows,3420,9026
-9,3,5,hiddenPairs|nFish|pointingArrows,870,1616
-9,3,2,hiddenPairs|nFish|pointingArrows,8349,31300
-9,3,8,hiddenPairs|nFish|pointingArrows,23,52
-9,3,4,hiddenPairs|nFish|removeByElements,1659,3730
-9,3,7,hiddenPairs|nFish|removeByElements,219,354
-9,3,1,hiddenPairs|nFish|removeByElements,20984,37909
-9,3,6,hiddenPairs|nFish|removeByElements,472,796
-9,3,3,hiddenPairs|nFish|removeByElements,3569,9465
-9,3,2,hiddenPairs|nFish|removeByElements,8534,32345
-9,3,5,hiddenPairs|nFish|removeByElements,901,1730
-9,3,8,hiddenPairs|nFish|removeByElements,23,53
-9,3,1,nFish|nakedPairs|pointingArrows,14328,88695
-9,3,3,nFish|nakedPairs|pointingArrows,1966,7007
-9,3,2,nFish|nakedPairs|pointingArrows,6796,31518
-9,3,4,nFish|nakedPairs|pointingArrows,1070,2644
-9,3,6,nFish|nakedPairs|pointingArrows,298,505
-9,3,5,nFish|nakedPairs|pointingArrows,518,1015
-9,3,7,nFish|nakedPairs|pointingArrows,174,247
-9,3,8,nFish|nakedPairs|pointingArrows,25,45
-9,3,4,nFish|nakedPairs|removeByElements,1470,5916
-9,3,7,nFish|nakedPairs|removeByElements,3,641
-9,3,1,nFish|nakedPairs|removeByElements,21854,57462
-9,3,6,nFish|nakedPairs|removeByElements,80,1374
-9,3,3,nFish|nakedPairs|removeByElements,3338,13163
-9,3,5,nFish|nakedPairs|removeByElements,607,2910
-9,3,2,nFish|nakedPairs|removeByElements,7882,39024
-9,3,8,nFish|nakedPairs|removeByElements,0,115
-9,3,4,nFish|pointingArrows|removeByElements,1116,7442
-9,3,7,nFish|pointingArrows|removeByElements,11,854
-9,3,1,nFish|pointingArrows|removeByElements,15069,81825
-9,3,6,nFish|pointingArrows|removeByElements,88,1902
-9,3,3,nFish|pointingArrows|removeByElements,2436,15009
-9,3,5,nFish|pointingArrows|removeByElements,480,4048
-9,3,2,nFish|pointingArrows|removeByElements,5166,36085
-9,3,8,nFish|pointingArrows|removeByElements,0,168
-9,4,4,hiddenPairs|nFish|nakedPairs|pointingArrows,1480,3125
-9,4,7,hiddenPairs|nFish|nakedPairs|pointingArrows,215,335
-9,4,1,hiddenPairs|nFish|nakedPairs|pointingArrows,17821,33596
-9,4,6,hiddenPairs|nFish|nakedPairs|pointingArrows,457,737
-9,4,3,hiddenPairs|nFish|nakedPairs|pointingArrows,2979,7513
-9,4,2,hiddenPairs|nFish|nakedPairs|pointingArrows,7072,25051
-9,4,5,hiddenPairs|nFish|nakedPairs|pointingArrows,827,1473
-9,4,8,hiddenPairs|nFish|nakedPairs|pointingArrows,23,51
-9,4,4,hiddenPairs|nFish|nakedPairs|removeByElements,1515,3274
-9,4,7,hiddenPairs|nFish|nakedPairs|removeByElements,216,338
-9,4,1,hiddenPairs|nFish|nakedPairs|removeByElements,18365,34269
-9,4,6,hiddenPairs|nFish|nakedPairs|removeByElements,458,750
-9,4,3,hiddenPairs|nFish|nakedPairs|removeByElements,3131,8024
-9,4,2,hiddenPairs|nFish|nakedPairs|removeByElements,7429,26759
-9,4,5,hiddenPairs|nFish|nakedPairs|removeByElements,852,1577
-9,4,8,hiddenPairs|nFish|nakedPairs|removeByElements,23,52
-9,4,4,hiddenPairs|nFish|pointingArrows|removeByElements,1506,3200
-9,4,7,hiddenPairs|nFish|pointingArrows|removeByElements,216,340
-9,4,1,hiddenPairs|nFish|pointingArrows|removeByElements,17668,33301
-9,4,6,hiddenPairs|nFish|pointingArrows|removeByElements,460,747
-9,4,3,hiddenPairs|nFish|pointingArrows|removeByElements,3015,7774
-9,4,5,hiddenPairs|nFish|pointingArrows|removeByElements,851,1523
-9,4,2,hiddenPairs|nFish|pointingArrows|removeByElements,7210,25760
-9,4,8,hiddenPairs|nFish|pointingArrows|removeByElements,23,52
-9,4,4,nFish|nakedPairs|pointingArrows|removeByElements,924,4511
-9,4,7,nFish|nakedPairs|pointingArrows|removeByElements,7,525
-9,4,1,nFish|nakedPairs|pointingArrows|removeByElements,13871,52032
-9,4,6,nFish|nakedPairs|pointingArrows|removeByElements,60,1051
-9,4,3,nFish|nakedPairs|pointingArrows|removeByElements,2124,10134
-9,4,5,nFish|nakedPairs|pointingArrows|removeByElements,371,2229
-9,4,2,nFish|nakedPairs|pointingArrows|removeByElements,4799,27640
-9,4,8,nFish|nakedPairs|pointingArrows|removeByElements,0,97
-9,5,4,hiddenPairs|nFish|nakedPairs|pointingArrows|removeByElements,1401,2901
-9,5,7,hiddenPairs|nFish|nakedPairs|pointingArrows|removeByElements,215,334
-9,5,1,hiddenPairs|nFish|nakedPairs|pointingArrows|removeByElements,16019,31051
-9,5,6,hiddenPairs|nFish|nakedPairs|pointingArrows|removeByElements,455,726
-9,5,3,hiddenPairs|nFish|nakedPairs|pointingArrows|removeByElements,2736,6710
-9,5,2,hiddenPairs|nFish|nakedPairs|pointingArrows|removeByElements,6418,21543
-9,5,5,hiddenPairs|nFish|nakedPairs|pointingArrows|removeByElements,816,1422
-9,5,8,hiddenPairs|nFish|nakedPairs|pointingArrows|removeByElements,23,51
+9,2,4,"hiddenPairs, nFish",1957,5008
+9,2,7,"hiddenPairs, nFish",220,403
+9,2,1,"hiddenPairs, nFish",27889,49410
+9,2,6,"hiddenPairs, nFish",496,925
+9,2,3,"hiddenPairs, nFish",4470,13261
+9,2,2,"hiddenPairs, nFish",11007,47268
+9,2,5,"hiddenPairs, nFish",1021,2196
+9,2,8,"hiddenPairs, nFish",23,55
+9,2,1,"nFish, nakedPairs",28,94
+9,2,1,"nFish, pointingArrows",12227,183935
+9,2,3,"nFish, pointingArrows",1802,11227
+9,2,2,"nFish, pointingArrows",5980,47667
+9,2,4,"nFish, pointingArrows",1246,5088
+9,2,6,"nFish, pointingArrows",424,1367
+9,2,5,"nFish, pointingArrows",660,2209
+9,2,7,"nFish, pointingArrows",287,797
+9,2,8,"nFish, pointingArrows",31,107
+9,2,4,"nFish, removeByElements",1712,11095
+9,2,7,"nFish, removeByElements",8,1203
+9,2,1,"nFish, removeByElements",22064,115097
+9,2,6,"nFish, removeByElements",127,2788
+9,2,3,"nFish, removeByElements",3562,20945
+9,2,5,"nFish, removeByElements",758,6014
+9,2,2,"nFish, removeByElements",7692,51235
+9,2,8,"nFish, removeByElements",0,227
+9,3,4,"hiddenPairs, nFish, nakedPairs",1780,4251
+9,3,7,"hiddenPairs, nFish, nakedPairs",218,368
+9,3,1,"hiddenPairs, nFish, nakedPairs",22662,40552
+9,3,6,"hiddenPairs, nFish, nakedPairs",482,851
+9,3,3,"hiddenPairs, nFish, nakedPairs",3887,10887
+9,3,2,"hiddenPairs, nFish, nakedPairs",9305,37710
+9,3,5,"hiddenPairs, nFish, nakedPairs",962,1895
+9,3,8,"hiddenPairs, nFish, nakedPairs",23,52
+9,3,4,"hiddenPairs, nFish, pointingArrows",1586,3530
+9,3,7,"hiddenPairs, nFish, pointingArrows",216,349
+9,3,1,"hiddenPairs, nFish, pointingArrows",20777,37687
+9,3,6,"hiddenPairs, nFish, pointingArrows",465,771
+9,3,3,"hiddenPairs, nFish, pointingArrows",3420,9026
+9,3,5,"hiddenPairs, nFish, pointingArrows",870,1616
+9,3,2,"hiddenPairs, nFish, pointingArrows",8349,31300
+9,3,8,"hiddenPairs, nFish, pointingArrows",23,52
+9,3,4,"hiddenPairs, nFish, removeByElements",1659,3730
+9,3,7,"hiddenPairs, nFish, removeByElements",219,354
+9,3,1,"hiddenPairs, nFish, removeByElements",20984,37909
+9,3,6,"hiddenPairs, nFish, removeByElements",472,796
+9,3,3,"hiddenPairs, nFish, removeByElements",3569,9465
+9,3,2,"hiddenPairs, nFish, removeByElements",8534,32345
+9,3,5,"hiddenPairs, nFish, removeByElements",901,1730
+9,3,8,"hiddenPairs, nFish, removeByElements",23,53
+9,3,1,"nFish, nakedPairs, pointingArrows",14328,88695
+9,3,3,"nFish, nakedPairs, pointingArrows",1966,7007
+9,3,2,"nFish, nakedPairs, pointingArrows",6796,31518
+9,3,4,"nFish, nakedPairs, pointingArrows",1070,2644
+9,3,6,"nFish, nakedPairs, pointingArrows",298,505
+9,3,5,"nFish, nakedPairs, pointingArrows",518,1015
+9,3,7,"nFish, nakedPairs, pointingArrows",174,247
+9,3,8,"nFish, nakedPairs, pointingArrows",25,45
+9,3,4,"nFish, nakedPairs, removeByElements",1470,5916
+9,3,7,"nFish, nakedPairs, removeByElements",3,641
+9,3,1,"nFish, nakedPairs, removeByElements",21854,57462
+9,3,6,"nFish, nakedPairs, removeByElements",80,1374
+9,3,3,"nFish, nakedPairs, removeByElements",3338,13163
+9,3,5,"nFish, nakedPairs, removeByElements",607,2910
+9,3,2,"nFish, nakedPairs, removeByElements",7882,39024
+9,3,8,"nFish, nakedPairs, removeByElements",0,115
+9,3,4,"nFish, pointingArrows, removeByElements",1116,7442
+9,3,7,"nFish, pointingArrows, removeByElements",11,854
+9,3,1,"nFish, pointingArrows, removeByElements",15069,81825
+9,3,6,"nFish, pointingArrows, removeByElements",88,1902
+9,3,3,"nFish, pointingArrows, removeByElements",2436,15009
+9,3,5,"nFish, pointingArrows, removeByElements",480,4048
+9,3,2,"nFish, pointingArrows, removeByElements",5166,36085
+9,3,8,"nFish, pointingArrows, removeByElements",0,168
+9,4,4,"hiddenPairs, nFish, nakedPairs, pointingArrows",1480,3125
+9,4,7,"hiddenPairs, nFish, nakedPairs, pointingArrows",215,335
+9,4,1,"hiddenPairs, nFish, nakedPairs, pointingArrows",17821,33596
+9,4,6,"hiddenPairs, nFish, nakedPairs, pointingArrows",457,737
+9,4,3,"hiddenPairs, nFish, nakedPairs, pointingArrows",2979,7513
+9,4,2,"hiddenPairs, nFish, nakedPairs, pointingArrows",7072,25051
+9,4,5,"hiddenPairs, nFish, nakedPairs, pointingArrows",827,1473
+9,4,8,"hiddenPairs, nFish, nakedPairs, pointingArrows",23,51
+9,4,4,"hiddenPairs, nFish, nakedPairs, removeByElements",1515,3274
+9,4,7,"hiddenPairs, nFish, nakedPairs, removeByElements",216,338
+9,4,1,"hiddenPairs, nFish, nakedPairs, removeByElements",18365,34269
+9,4,6,"hiddenPairs, nFish, nakedPairs, removeByElements",458,750
+9,4,3,"hiddenPairs, nFish, nakedPairs, removeByElements",3131,8024
+9,4,2,"hiddenPairs, nFish, nakedPairs, removeByElements",7429,26759
+9,4,5,"hiddenPairs, nFish, nakedPairs, removeByElements",852,1577
+9,4,8,"hiddenPairs, nFish, nakedPairs, removeByElements",23,52
+9,4,4,"hiddenPairs, nFish, pointingArrows, removeByElements",1506,3200
+9,4,7,"hiddenPairs, nFish, pointingArrows, removeByElements",216,340
+9,4,1,"hiddenPairs, nFish, pointingArrows, removeByElements",17668,33301
+9,4,6,"hiddenPairs, nFish, pointingArrows, removeByElements",460,747
+9,4,3,"hiddenPairs, nFish, pointingArrows, removeByElements",3015,7774
+9,4,5,"hiddenPairs, nFish, pointingArrows, removeByElements",851,1523
+9,4,2,"hiddenPairs, nFish, pointingArrows, removeByElements",7210,25760
+9,4,8,"hiddenPairs, nFish, pointingArrows, removeByElements",23,52
+9,4,4,"nFish, nakedPairs, pointingArrows, removeByElements",924,4511
+9,4,7,"nFish, nakedPairs, pointingArrows, removeByElements",7,525
+9,4,1,"nFish, nakedPairs, pointingArrows, removeByElements",13871,52032
+9,4,6,"nFish, nakedPairs, pointingArrows, removeByElements",60,1051
+9,4,3,"nFish, nakedPairs, pointingArrows, removeByElements",2124,10134
+9,4,5,"nFish, nakedPairs, pointingArrows, removeByElements",371,2229
+9,4,2,"nFish, nakedPairs, pointingArrows, removeByElements",4799,27640
+9,4,8,"nFish, nakedPairs, pointingArrows, removeByElements",0,97
+9,5,4,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",1401,2901
+9,5,7,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",215,334
+9,5,1,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",16019,31051
+9,5,6,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",455,726
+9,5,3,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",2736,6710
+9,5,2,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",6418,21543
+9,5,5,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",816,1422
+9,5,8,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",23,51
+16,2,1,"hiddenPairs, nFish",68496,131278
+16,2,2,"hiddenPairs, nFish",25558,154158
+16,2,6,"hiddenPairs, nFish",765,1740
+16,2,4,"hiddenPairs, nFish",3555,10885
+16,2,3,"hiddenPairs, nFish",9065,38159
+16,2,5,"hiddenPairs, nFish",1596,4206
+16,2,8,"hiddenPairs, nFish",238,578
+16,2,9,"hiddenPairs, nFish",141,356
+16,2,11,"hiddenPairs, nFish",44,112
+16,2,13,"hiddenPairs, nFish",8,32
+16,2,12,"hiddenPairs, nFish",21,100
+16,2,7,"hiddenPairs, nFish",474,1010
+16,2,10,"hiddenPairs, nFish",82,263
+16,2,1,"nFish, pointingArrows",11783,399302
+16,2,3,"nFish, pointingArrows",1195,8118
+16,2,5,"nFish, pointingArrows",196,722
+16,2,2,"nFish, pointingArrows",6089,63351
+16,2,12,"nFish, pointingArrows",1,5
+16,2,7,"nFish, pointingArrows",54,128
+16,2,4,"nFish, pointingArrows",317,1590
+16,2,10,"nFish, pointingArrows",3,8
+16,2,9,"nFish, pointingArrows",3,12
+16,2,6,"nFish, pointingArrows",80,243
+16,2,8,"nFish, pointingArrows",21,59
+16,2,11,"nFish, pointingArrows",1,3
+16,2,1,"nFish, removeByElements",57217,498169
+16,2,2,"nFish, removeByElements",16193,142085
+16,2,4,"nFish, removeByElements",2668,19344
+16,2,5,"nFish, removeByElements",1168,8672
+16,2,6,"nFish, removeByElements",519,3995
+16,2,3,"nFish, removeByElements",6488,47852
+16,2,8,"nFish, removeByElements",80,922
+16,2,7,"nFish, removeByElements",228,1855
+16,2,12,"nFish, removeByElements",0,60
+16,2,9,"nFish, removeByElements",28,401
+16,2,10,"nFish, removeByElements",9,247
+16,2,11,"nFish, removeByElements",4,109
+16,2,13,"nFish, removeByElements",0,18
+16,3,1,"hiddenPairs, nFish, nakedPairs",56559,106721
+16,3,2,"hiddenPairs, nFish, nakedPairs",22886,124493
+16,3,6,"hiddenPairs, nFish, nakedPairs",709,1539
+16,3,4,"hiddenPairs, nFish, nakedPairs",3294,9012
+16,3,3,"hiddenPairs, nFish, nakedPairs",8326,31382
+16,3,5,"hiddenPairs, nFish, nakedPairs",1530,3614
+16,3,8,"hiddenPairs, nFish, nakedPairs",241,545
+16,3,9,"hiddenPairs, nFish, nakedPairs",133,359
+16,3,11,"hiddenPairs, nFish, nakedPairs",43,98
+16,3,13,"hiddenPairs, nFish, nakedPairs",8,29
+16,3,12,"hiddenPairs, nFish, nakedPairs",19,90
+16,3,7,"hiddenPairs, nFish, nakedPairs",468,971
+16,3,10,"hiddenPairs, nFish, nakedPairs",80,226
+16,3,1,"hiddenPairs, nFish, pointingArrows",52329,92997
+16,3,2,"hiddenPairs, nFish, pointingArrows",21534,98072
+16,3,4,"hiddenPairs, nFish, pointingArrows",2609,6845
+16,3,6,"hiddenPairs, nFish, pointingArrows",520,1150
+16,3,3,"hiddenPairs, nFish, pointingArrows",6874,23237
+16,3,5,"hiddenPairs, nFish, pointingArrows",1157,2697
+16,3,8,"hiddenPairs, nFish, pointingArrows",201,435
+16,3,9,"hiddenPairs, nFish, pointingArrows",128,237
+16,3,11,"hiddenPairs, nFish, pointingArrows",43,67
+16,3,13,"hiddenPairs, nFish, pointingArrows",8,16
+16,3,12,"hiddenPairs, nFish, pointingArrows",20,64
+16,3,7,"hiddenPairs, nFish, pointingArrows",368,686
+16,3,10,"hiddenPairs, nFish, pointingArrows",76,128
+16,3,1,"hiddenPairs, nFish, removeByElements",53231,92847
+16,3,2,"hiddenPairs, nFish, removeByElements",21887,95673
+16,3,4,"hiddenPairs, nFish, removeByElements",2676,6737
+16,3,6,"hiddenPairs, nFish, removeByElements",519,1151
+16,3,3,"hiddenPairs, nFish, removeByElements",7252,22470
+16,3,5,"hiddenPairs, nFish, removeByElements",1189,2732
+16,3,8,"hiddenPairs, nFish, removeByElements",196,433
+16,3,9,"hiddenPairs, nFish, removeByElements",131,237
+16,3,11,"hiddenPairs, nFish, removeByElements",42,66
+16,3,13,"hiddenPairs, nFish, removeByElements",8,17
+16,3,12,"hiddenPairs, nFish, removeByElements",20,52
+16,3,7,"hiddenPairs, nFish, removeByElements",364,677
+16,3,10,"hiddenPairs, nFish, removeByElements",79,158
+16,3,1,"nFish, nakedPairs, pointingArrows",34144,510919
+16,3,3,"nFish, nakedPairs, pointingArrows",4183,16113
+16,3,2,"nFish, nakedPairs, pointingArrows",17854,102875
+16,3,5,"nFish, nakedPairs, pointingArrows",543,1144
+16,3,4,"nFish, nakedPairs, pointingArrows",1194,3612
+16,3,6,"nFish, nakedPairs, pointingArrows",182,318
+16,3,12,"nFish, nakedPairs, pointingArrows",2,8
+16,3,10,"nFish, nakedPairs, pointingArrows",2,5
+16,3,7,"nFish, nakedPairs, pointingArrows",76,171
+16,3,8,"nFish, nakedPairs, pointingArrows",26,48
+16,3,9,"nFish, nakedPairs, pointingArrows",13,29
+16,3,11,"nFish, nakedPairs, pointingArrows",1,1
+16,3,1,"nFish, nakedPairs, removeByElements",66102,217840
+16,3,2,"nFish, nakedPairs, removeByElements",20820,111561
+16,3,4,"nFish, nakedPairs, removeByElements",2828,11427
+16,3,5,"nFish, nakedPairs, removeByElements",1098,4628
+16,3,6,"nFish, nakedPairs, removeByElements",473,2108
+16,3,3,"nFish, nakedPairs, removeByElements",7356,32511
+16,3,8,"nFish, nakedPairs, removeByElements",61,639
+16,3,7,"nFish, nakedPairs, removeByElements",195,1090
+16,3,12,"nFish, nakedPairs, removeByElements",0,38
+16,3,9,"nFish, nakedPairs, removeByElements",21,276
+16,3,10,"nFish, nakedPairs, removeByElements",10,183
+16,3,11,"nFish, nakedPairs, removeByElements",3,78
+16,3,13,"nFish, nakedPairs, removeByElements",0,14
+16,3,1,"nFish, pointingArrows, removeByElements",45169,370242
+16,3,2,"nFish, pointingArrows, removeByElements",13008,109823
+16,3,4,"nFish, pointingArrows, removeByElements",2126,13814
+16,3,5,"nFish, pointingArrows, removeByElements",915,6033
+16,3,6,"nFish, pointingArrows, removeByElements",371,2771
+16,3,3,"nFish, pointingArrows, removeByElements",5181,37306
+16,3,7,"nFish, pointingArrows, removeByElements",170,1260
+16,3,12,"nFish, pointingArrows, removeByElements",0,50
+16,3,9,"nFish, pointingArrows, removeByElements",23,286
+16,3,10,"nFish, pointingArrows, removeByElements",8,198
+16,3,8,"nFish, pointingArrows, removeByElements",51,652
+16,3,11,"nFish, pointingArrows, removeByElements",4,93
+16,3,13,"nFish, pointingArrows, removeByElements",0,18
+16,4,1,"hiddenPairs, nFish, nakedPairs, pointingArrows",44003,79489
+16,4,2,"hiddenPairs, nFish, nakedPairs, pointingArrows",18422,80362
+16,4,4,"hiddenPairs, nFish, nakedPairs, pointingArrows",2285,5846
+16,4,6,"hiddenPairs, nFish, nakedPairs, pointingArrows",501,1020
+16,4,3,"hiddenPairs, nFish, nakedPairs, pointingArrows",6066,19293
+16,4,5,"hiddenPairs, nFish, nakedPairs, pointingArrows",1075,2398
+16,4,8,"hiddenPairs, nFish, nakedPairs, pointingArrows",202,362
+16,4,9,"hiddenPairs, nFish, nakedPairs, pointingArrows",121,216
+16,4,11,"hiddenPairs, nFish, nakedPairs, pointingArrows",40,60
+16,4,13,"hiddenPairs, nFish, nakedPairs, pointingArrows",8,16
+16,4,12,"hiddenPairs, nFish, nakedPairs, pointingArrows",19,47
+16,4,7,"hiddenPairs, nFish, nakedPairs, pointingArrows",356,603
+16,4,10,"hiddenPairs, nFish, nakedPairs, pointingArrows",75,132
+16,4,1,"hiddenPairs, nFish, nakedPairs, removeByElements",45612,80477
+16,4,2,"hiddenPairs, nFish, nakedPairs, removeByElements",19259,80412
+16,4,4,"hiddenPairs, nFish, nakedPairs, removeByElements",2417,5832
+16,4,6,"hiddenPairs, nFish, nakedPairs, removeByElements",506,1067
+16,4,3,"hiddenPairs, nFish, nakedPairs, removeByElements",6370,19039
+16,4,5,"hiddenPairs, nFish, nakedPairs, removeByElements",1112,2444
+16,4,8,"hiddenPairs, nFish, nakedPairs, removeByElements",189,372
+16,4,9,"hiddenPairs, nFish, nakedPairs, removeByElements",130,215
+16,4,11,"hiddenPairs, nFish, nakedPairs, removeByElements",40,63
+16,4,13,"hiddenPairs, nFish, nakedPairs, removeByElements",8,15
+16,4,12,"hiddenPairs, nFish, nakedPairs, removeByElements",19,46
+16,4,7,"hiddenPairs, nFish, nakedPairs, removeByElements",355,624
+16,4,10,"hiddenPairs, nFish, nakedPairs, removeByElements",75,149
+16,4,1,"hiddenPairs, nFish, pointingArrows, removeByElements",44092,78218
+16,4,2,"hiddenPairs, nFish, pointingArrows, removeByElements",18548,79686
+16,4,4,"hiddenPairs, nFish, pointingArrows, removeByElements",2352,5870
+16,4,6,"hiddenPairs, nFish, pointingArrows, removeByElements",475,973
+16,4,3,"hiddenPairs, nFish, pointingArrows, removeByElements",6272,19378
+16,4,5,"hiddenPairs, nFish, pointingArrows, removeByElements",1081,2339
+16,4,8,"hiddenPairs, nFish, pointingArrows, removeByElements",188,352
+16,4,9,"hiddenPairs, nFish, pointingArrows, removeByElements",124,186
+16,4,11,"hiddenPairs, nFish, pointingArrows, removeByElements",43,61
+16,4,13,"hiddenPairs, nFish, pointingArrows, removeByElements",8,13
+16,4,12,"hiddenPairs, nFish, pointingArrows, removeByElements",19,38
+16,4,7,"hiddenPairs, nFish, pointingArrows, removeByElements",341,585
+16,4,10,"hiddenPairs, nFish, pointingArrows, removeByElements",75,117
+16,4,1,"nFish, nakedPairs, pointingArrows, removeByElements",43659,184099
+16,4,2,"nFish, nakedPairs, pointingArrows, removeByElements",13320,82687
+16,4,4,"nFish, nakedPairs, pointingArrows, removeByElements",1810,9031
+16,4,5,"nFish, nakedPairs, pointingArrows, removeByElements",757,3786
+16,4,6,"nFish, nakedPairs, pointingArrows, removeByElements",308,1753
+16,4,3,"nFish, nakedPairs, pointingArrows, removeByElements",4768,25547
+16,4,7,"nFish, nakedPairs, pointingArrows, removeByElements",128,875
+16,4,12,"nFish, nakedPairs, pointingArrows, removeByElements",0,35
+16,4,9,"nFish, nakedPairs, pointingArrows, removeByElements",16,208
+16,4,10,"nFish, nakedPairs, pointingArrows, removeByElements",6,149
+16,4,8,"nFish, nakedPairs, pointingArrows, removeByElements",43,500
+16,4,11,"nFish, nakedPairs, pointingArrows, removeByElements",2,63
+16,4,13,"nFish, nakedPairs, pointingArrows, removeByElements",0,8
+16,5,1,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",38940,70428
+16,5,2,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",16531,68685
+16,5,4,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",2089,5064
+16,5,6,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",473,903
+16,5,3,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",5588,16700
+16,5,5,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",982,2093
+16,5,8,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",185,308
+16,5,9,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",120,173
+16,5,11,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",40,55
+16,5,13,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",8,13
+16,5,12,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",19,37
+16,5,7,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",331,531
+16,5,10,"hiddenPairs, nFish, nakedPairs, pointingArrows, removeByElements",74,113

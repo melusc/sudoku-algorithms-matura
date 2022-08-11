@@ -4,42 +4,87 @@ size,amount,plugins,amountUnsolved,completenessNoCandidates,completenessWithCand
 9,1,nFish,2500,0.39,0.39,2.79,0.39
 9,1,pointingArrows,1689,0.46,0.79,3.01,0.37
 9,1,removeByElements,1177,0.46,0.81,3.16,0.36
-9,2,hiddenPairs|nakedPairs,144,0.54,0.82,3.75,0.35
-9,2,hiddenPairs|nFish,88,0.55,0.84,3.81,0.34
-9,2,hiddenPairs|pointingArrows,9,0.50,0.84,4.22,0.33
-9,2,hiddenPairs|removeByElements,34,0.52,0.84,4.09,0.34
-9,2,nakedPairs|pointingArrows,29,0.51,0.84,4.00,0.34
-9,2,nakedPairs|removeByElements,78,0.52,0.84,3.90,0.34
-9,2,nFish|nakedPairs,2500,0.39,0.39,2.79,0.39
-9,2,nFish|pointingArrows,1328,0.41,0.77,3.12,0.36
-9,2,nFish|removeByElements,658,0.46,0.82,3.34,0.35
-9,2,pointingArrows|removeByElements,606,0.47,0.83,3.36,0.35
+9,2,"hiddenPairs, nakedPairs",144,0.54,0.82,3.75,0.35
+9,2,"hiddenPairs, nFish",88,0.55,0.84,3.81,0.34
+9,2,"hiddenPairs, pointingArrows",9,0.50,0.84,4.22,0.33
+9,2,"hiddenPairs, removeByElements",34,0.52,0.84,4.09,0.34
+9,2,"nakedPairs, pointingArrows",29,0.51,0.84,4.00,0.34
+9,2,"nakedPairs, removeByElements",78,0.52,0.84,3.90,0.34
+9,2,"nFish, nakedPairs",2500,0.39,0.39,2.79,0.39
+9,2,"nFish, pointingArrows",1328,0.41,0.77,3.12,0.36
+9,2,"nFish, removeByElements",658,0.46,0.82,3.34,0.35
+9,2,"pointingArrows, removeByElements",606,0.47,0.83,3.36,0.35
 9,2,hiddenPairs,68.75,0.54,0.83,3.83,0.34
 9,2,nakedPairs,687.75,0.40,0.43,2.89,0.38
 9,2,nFish,1143.50,0.41,0.57,2.99,0.37
 9,2,pointingArrows,493.00,0.43,0.79,3.21,0.36
 9,2,removeByElements,344.00,0.47,0.82,3.40,0.35
-9,3,hiddenPairs|nakedPairs|pointingArrows,4,0.49,0.82,4.00,0.34
-9,3,hiddenPairs|nakedPairs|removeByElements,28,0.53,0.85,4.00,0.34
-9,3,hiddenPairs|nFish|nakedPairs,57,0.54,0.84,3.89,0.35
-9,3,hiddenPairs|nFish|pointingArrows,5,0.52,0.85,4.40,0.32
-9,3,hiddenPairs|nFish|removeByElements,19,0.51,0.84,4.26,0.34
-9,3,hiddenPairs|pointingArrows|removeByElements,8,0.50,0.83,4.25,0.33
-9,3,nakedPairs|pointingArrows|removeByElements,23,0.54,0.85,4.04,0.34
-9,3,nFish|nakedPairs|pointingArrows,14,0.49,0.83,4.14,0.34
-9,3,nFish|nakedPairs|removeByElements,26,0.51,0.84,4.08,0.34
-9,3,nFish|pointingArrows|removeByElements,558,0.47,0.82,3.38,0.35
+9,3,"hiddenPairs, nakedPairs, pointingArrows",4,0.49,0.82,4.00,0.34
+9,3,"hiddenPairs, nakedPairs, removeByElements",28,0.53,0.85,4.00,0.34
+9,3,"hiddenPairs, nFish, nakedPairs",57,0.54,0.84,3.89,0.35
+9,3,"hiddenPairs, nFish, pointingArrows",5,0.52,0.85,4.40,0.32
+9,3,"hiddenPairs, nFish, removeByElements",19,0.51,0.84,4.26,0.34
+9,3,"hiddenPairs, pointingArrows, removeByElements",8,0.50,0.83,4.25,0.33
+9,3,"nakedPairs, pointingArrows, removeByElements",23,0.54,0.85,4.04,0.34
+9,3,"nFish, nakedPairs, pointingArrows",14,0.49,0.83,4.14,0.34
+9,3,"nFish, nakedPairs, removeByElements",26,0.51,0.84,4.08,0.34
+9,3,"nFish, pointingArrows, removeByElements",558,0.47,0.82,3.38,0.35
 9,3,hiddenPairs,20.17,0.53,0.84,4.02,0.34
 9,3,nakedPairs,25.33,0.53,0.84,3.99,0.34
 9,3,nFish,113.17,0.48,0.83,3.50,0.35
 9,3,pointingArrows,102.00,0.47,0.83,3.45,0.35
 9,3,removeByElements,110.33,0.48,0.83,3.49,0.35
-9,4,hiddenPairs|nakedPairs|pointingArrows|removeByElements,4,0.49,0.82,4.00,0.34
-9,4,hiddenPairs|nFish|nakedPairs|removeByElements,12,0.52,0.84,4.08,0.35
-9,4,hiddenPairs|nFish|pointingArrows|removeByElements,4,0.51,0.85,4.50,0.32
-9,4,nFish|nakedPairs|pointingArrows|removeByElements,10,0.50,0.84,4.40,0.34
+9,4,"hiddenPairs, nakedPairs, pointingArrows, removeByElements",4,0.49,0.82,4.00,0.34
+9,4,"hiddenPairs, nFish, nakedPairs, removeByElements",12,0.52,0.84,4.08,0.35
+9,4,"hiddenPairs, nFish, pointingArrows, removeByElements",4,0.51,0.85,4.50,0.32
+9,4,"nFish, nakedPairs, pointingArrows, removeByElements",10,0.50,0.84,4.40,0.34
 9,4,hiddenPairs,5.00,0.51,0.84,4.15,0.34
 9,4,nakedPairs,6.50,0.51,0.84,4.19,0.34
 9,4,nFish,6.50,0.51,0.84,4.27,0.34
 9,4,pointingArrows,4.50,0.50,0.84,4.33,0.33
 9,4,removeByElements,7.50,0.51,0.84,4.23,0.34
+16,1,hiddenPairs,1264,0.57,0.85,4.83,0.45
+16,1,nakedPairs,2500,0.46,0.46,4.17,0.46
+16,1,nFish,2500,0.46,0.46,4.17,0.46
+16,1,pointingArrows,2491,0.47,0.84,4.18,0.46
+16,1,removeByElements,2251,0.53,0.89,4.28,0.46
+16,2,"hiddenPairs, nakedPairs",735,0.57,0.85,5.44,0.44
+16,2,"hiddenPairs, nFish",843,0.57,0.85,5.27,0.44
+16,2,"hiddenPairs, pointingArrows",106,0.59,0.91,8.25,0.41
+16,2,"hiddenPairs, removeByElements",174,0.58,0.90,8.14,0.41
+16,2,"nakedPairs, pointingArrows",298,0.52,0.86,7.06,0.42
+16,2,"nakedPairs, removeByElements",578,0.55,0.89,5.84,0.44
+16,2,"nFish, nakedPairs",2500,0.46,0.46,4.17,0.46
+16,2,"nFish, pointingArrows",2480,0.47,0.85,4.18,0.46
+16,2,"nFish, removeByElements",1454,0.54,0.90,4.69,0.45
+16,2,"pointingArrows, removeByElements",1304,0.56,0.91,4.79,0.45
+16,2,hiddenPairs,464.50,0.57,0.86,5.78,0.44
+16,2,nakedPairs,1027.75,0.50,0.62,4.84,0.45
+16,2,nFish,1819.25,0.49,0.73,4.41,0.46
+16,2,pointingArrows,1047.00,0.51,0.87,4.68,0.45
+16,2,removeByElements,877.50,0.55,0.90,5.09,0.45
+16,3,"hiddenPairs, nakedPairs, pointingArrows",56,0.62,0.92,8.70,0.41
+16,3,"hiddenPairs, nakedPairs, removeByElements",138,0.58,0.90,8.44,0.41
+16,3,"hiddenPairs, nFish, nakedPairs",502,0.56,0.85,6.02,0.43
+16,3,"hiddenPairs, nFish, pointingArrows",73,0.58,0.90,8.22,0.41
+16,3,"hiddenPairs, nFish, removeByElements",136,0.58,0.90,8.42,0.41
+16,3,"hiddenPairs, pointingArrows, removeByElements",82,0.61,0.91,8.41,0.41
+16,3,"nakedPairs, pointingArrows, removeByElements",266,0.56,0.90,7.30,0.42
+16,3,"nFish, nakedPairs, pointingArrows",245,0.50,0.85,7.42,0.42
+16,3,"nFish, nakedPairs, removeByElements",267,0.53,0.88,7.32,0.42
+16,3,"nFish, pointingArrows, removeByElements",1194,0.56,0.91,4.88,0.45
+16,3,hiddenPairs,164.50,0.57,0.88,7.20,0.42
+16,3,nakedPairs,245.67,0.55,0.87,7.05,0.42
+16,3,nFish,402.83,0.55,0.89,5.95,0.44
+16,3,pointingArrows,319.33,0.55,0.90,5.93,0.44
+16,3,removeByElements,347.17,0.56,0.90,6.11,0.43
+16,4,"hiddenPairs, nakedPairs, pointingArrows, removeByElements",46,0.63,0.92,8.74,0.41
+16,4,"hiddenPairs, nFish, nakedPairs, pointingArrows",13,0.56,0.90,9.00,0.41
+16,4,"hiddenPairs, nFish, nakedPairs, removeByElements",95,0.57,0.90,8.83,0.40
+16,4,"hiddenPairs, nFish, pointingArrows, removeByElements",46,0.59,0.91,8.37,0.41
+16,4,"nFish, nakedPairs, pointingArrows, removeByElements",209,0.54,0.89,7.75,0.41
+16,4,hiddenPairs,50.00,0.59,0.91,8.71,0.41
+16,4,nakedPairs,90.75,0.56,0.90,8.20,0.41
+16,4,nFish,90.75,0.56,0.90,8.15,0.41
+16,4,pointingArrows,78.50,0.56,0.90,8.04,0.41
+16,4,removeByElements,99.00,0.56,0.90,8.19,0.41

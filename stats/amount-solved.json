@@ -88,31 +88,31 @@
 				"plugins": [
 					"hiddenPairs"
 				],
-				"amountSolved": 2431.25
+				"amountSolved": "2431.25"
 			},
 			{
 				"plugins": [
 					"nakedPairs"
 				],
-				"amountSolved": 1812.25
+				"amountSolved": "1812.25"
 			},
 			{
 				"plugins": [
 					"nFish"
 				],
-				"amountSolved": 1356.5
+				"amountSolved": "1356.50"
 			},
 			{
 				"plugins": [
 					"pointingArrows"
 				],
-				"amountSolved": 2007
+				"amountSolved": "2007.00"
 			},
 			{
 				"plugins": [
 					"removeByElements"
 				],
-				"amountSolved": 2156
+				"amountSolved": "2156.00"
 			}
 		],
 		"3": [
@@ -200,31 +200,31 @@
 				"plugins": [
 					"hiddenPairs"
 				],
-				"amountSolved": 2479.8333333333335
+				"amountSolved": "2479.83"
 			},
 			{
 				"plugins": [
 					"nakedPairs"
 				],
-				"amountSolved": 2474.6666666666665
+				"amountSolved": "2474.67"
 			},
 			{
 				"plugins": [
 					"nFish"
 				],
-				"amountSolved": 2386.8333333333335
+				"amountSolved": "2386.83"
 			},
 			{
 				"plugins": [
 					"pointingArrows"
 				],
-				"amountSolved": 2398
+				"amountSolved": "2398.00"
 			},
 			{
 				"plugins": [
 					"removeByElements"
 				],
-				"amountSolved": 2389.6666666666665
+				"amountSolved": "2389.67"
 			}
 		],
 		"4": [
@@ -277,31 +277,31 @@
 				"plugins": [
 					"hiddenPairs"
 				],
-				"amountSolved": 2495
+				"amountSolved": "2495.00"
 			},
 			{
 				"plugins": [
 					"nakedPairs"
 				],
-				"amountSolved": 2493.5
+				"amountSolved": "2493.50"
 			},
 			{
 				"plugins": [
 					"nFish"
 				],
-				"amountSolved": 2493.5
+				"amountSolved": "2493.50"
 			},
 			{
 				"plugins": [
 					"pointingArrows"
 				],
-				"amountSolved": 2495.5
+				"amountSolved": "2495.50"
 			},
 			{
 				"plugins": [
 					"removeByElements"
 				],
-				"amountSolved": 2492.5
+				"amountSolved": "2492.50"
 			}
 		],
 		"5": [
@@ -319,31 +319,379 @@
 				"plugins": [
 					"hiddenPairs"
 				],
-				"amountSolved": 2500
+				"amountSolved": "2500.00"
 			},
 			{
 				"plugins": [
 					"nakedPairs"
 				],
-				"amountSolved": 2500
+				"amountSolved": "2500.00"
 			},
 			{
 				"plugins": [
 					"nFish"
 				],
-				"amountSolved": 2500
+				"amountSolved": "2500.00"
 			},
 			{
 				"plugins": [
 					"pointingArrows"
 				],
-				"amountSolved": 2500
+				"amountSolved": "2500.00"
 			},
 			{
 				"plugins": [
 					"removeByElements"
 				],
+				"amountSolved": "2500.00"
+			}
+		]
+	},
+	"16": {
+		"1": [
+			{
+				"plugins": [
+					"hiddenPairs"
+				],
+				"amountSolved": 1236
+			},
+			{
+				"plugins": [
+					"pointingArrows"
+				],
+				"amountSolved": 9
+			},
+			{
+				"plugins": [
+					"removeByElements"
+				],
+				"amountSolved": 249
+			}
+		],
+		"2": [
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nakedPairs"
+				],
+				"amountSolved": 1765
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nFish"
+				],
+				"amountSolved": 1657
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"pointingArrows"
+				],
+				"amountSolved": 2394
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"removeByElements"
+				],
+				"amountSolved": 2326
+			},
+			{
+				"plugins": [
+					"nakedPairs",
+					"pointingArrows"
+				],
+				"amountSolved": 2202
+			},
+			{
+				"plugins": [
+					"nakedPairs",
+					"removeByElements"
+				],
+				"amountSolved": 1922
+			},
+			{
+				"plugins": [
+					"nFish",
+					"pointingArrows"
+				],
+				"amountSolved": 20
+			},
+			{
+				"plugins": [
+					"nFish",
+					"removeByElements"
+				],
+				"amountSolved": 1046
+			},
+			{
+				"plugins": [
+					"pointingArrows",
+					"removeByElements"
+				],
+				"amountSolved": 1196
+			},
+			{
+				"plugins": [
+					"hiddenPairs"
+				],
+				"amountSolved": "2035.50"
+			},
+			{
+				"plugins": [
+					"nakedPairs"
+				],
+				"amountSolved": "1472.25"
+			},
+			{
+				"plugins": [
+					"nFish"
+				],
+				"amountSolved": "680.75"
+			},
+			{
+				"plugins": [
+					"pointingArrows"
+				],
+				"amountSolved": "1453.00"
+			},
+			{
+				"plugins": [
+					"removeByElements"
+				],
+				"amountSolved": "1622.50"
+			}
+		],
+		"3": [
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nakedPairs",
+					"pointingArrows"
+				],
+				"amountSolved": 2444
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nakedPairs",
+					"removeByElements"
+				],
+				"amountSolved": 2362
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"nakedPairs"
+				],
+				"amountSolved": 1998
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"pointingArrows"
+				],
+				"amountSolved": 2427
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"removeByElements"
+				],
+				"amountSolved": 2364
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"amountSolved": 2418
+			},
+			{
+				"plugins": [
+					"nakedPairs",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"amountSolved": 2234
+			},
+			{
+				"plugins": [
+					"nFish",
+					"nakedPairs",
+					"pointingArrows"
+				],
+				"amountSolved": 2255
+			},
+			{
+				"plugins": [
+					"nFish",
+					"nakedPairs",
+					"removeByElements"
+				],
+				"amountSolved": 2233
+			},
+			{
+				"plugins": [
+					"nFish",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"amountSolved": 1306
+			},
+			{
+				"plugins": [
+					"hiddenPairs"
+				],
+				"amountSolved": "2335.50"
+			},
+			{
+				"plugins": [
+					"nakedPairs"
+				],
+				"amountSolved": "2254.33"
+			},
+			{
+				"plugins": [
+					"nFish"
+				],
+				"amountSolved": "2097.17"
+			},
+			{
+				"plugins": [
+					"pointingArrows"
+				],
+				"amountSolved": "2180.67"
+			},
+			{
+				"plugins": [
+					"removeByElements"
+				],
+				"amountSolved": "2152.83"
+			}
+		],
+		"4": [
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nakedPairs",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"amountSolved": 2454
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"nakedPairs",
+					"pointingArrows"
+				],
+				"amountSolved": 2487
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"nakedPairs",
+					"removeByElements"
+				],
+				"amountSolved": 2405
+			},
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"amountSolved": 2454
+			},
+			{
+				"plugins": [
+					"nFish",
+					"nakedPairs",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"amountSolved": 2291
+			},
+			{
+				"plugins": [
+					"hiddenPairs"
+				],
+				"amountSolved": "2450.00"
+			},
+			{
+				"plugins": [
+					"nakedPairs"
+				],
+				"amountSolved": "2409.25"
+			},
+			{
+				"plugins": [
+					"nFish"
+				],
+				"amountSolved": "2409.25"
+			},
+			{
+				"plugins": [
+					"pointingArrows"
+				],
+				"amountSolved": "2421.50"
+			},
+			{
+				"plugins": [
+					"removeByElements"
+				],
+				"amountSolved": "2401.00"
+			}
+		],
+		"5": [
+			{
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"nakedPairs",
+					"pointingArrows",
+					"removeByElements"
+				],
 				"amountSolved": 2500
+			},
+			{
+				"plugins": [
+					"hiddenPairs"
+				],
+				"amountSolved": "2500.00"
+			},
+			{
+				"plugins": [
+					"nakedPairs"
+				],
+				"amountSolved": "2500.00"
+			},
+			{
+				"plugins": [
+					"nFish"
+				],
+				"amountSolved": "2500.00"
+			},
+			{
+				"plugins": [
+					"pointingArrows"
+				],
+				"amountSolved": "2500.00"
+			},
+			{
+				"plugins": [
+					"removeByElements"
+				],
+				"amountSolved": "2500.00"
 			}
 		]
 	}

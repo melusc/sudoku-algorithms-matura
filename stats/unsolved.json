@@ -491,5 +491,511 @@
 			}
 		],
 		"5": []
+	},
+	"16": {
+		"1": [
+			{
+				"amountUnsolved": "1264",
+				"plugins": [
+					"hiddenPairs"
+				],
+				"completenessNoCandidates": "0.57",
+				"completenessWithCandidates": "0.85",
+				"packageRounds": "4.83",
+				"packageCompletenessNoCandidates": "0.45"
+			},
+			{
+				"amountUnsolved": "2500",
+				"plugins": [
+					"nakedPairs"
+				],
+				"completenessNoCandidates": "0.46",
+				"completenessWithCandidates": "0.46",
+				"packageRounds": "4.17",
+				"packageCompletenessNoCandidates": "0.46"
+			},
+			{
+				"amountUnsolved": "2500",
+				"plugins": [
+					"nFish"
+				],
+				"completenessNoCandidates": "0.46",
+				"completenessWithCandidates": "0.46",
+				"packageRounds": "4.17",
+				"packageCompletenessNoCandidates": "0.46"
+			},
+			{
+				"amountUnsolved": "2491",
+				"plugins": [
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.47",
+				"completenessWithCandidates": "0.84",
+				"packageRounds": "4.18",
+				"packageCompletenessNoCandidates": "0.46"
+			},
+			{
+				"amountUnsolved": "2251",
+				"plugins": [
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.53",
+				"completenessWithCandidates": "0.89",
+				"packageRounds": "4.28",
+				"packageCompletenessNoCandidates": "0.46"
+			}
+		],
+		"2": [
+			{
+				"amountUnsolved": "735",
+				"plugins": [
+					"hiddenPairs",
+					"nakedPairs"
+				],
+				"completenessNoCandidates": "0.57",
+				"completenessWithCandidates": "0.85",
+				"packageRounds": "5.44",
+				"packageCompletenessNoCandidates": "0.44"
+			},
+			{
+				"amountUnsolved": "843",
+				"plugins": [
+					"hiddenPairs",
+					"nFish"
+				],
+				"completenessNoCandidates": "0.57",
+				"completenessWithCandidates": "0.85",
+				"packageRounds": "5.27",
+				"packageCompletenessNoCandidates": "0.44"
+			},
+			{
+				"amountUnsolved": "106",
+				"plugins": [
+					"hiddenPairs",
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.59",
+				"completenessWithCandidates": "0.91",
+				"packageRounds": "8.25",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "174",
+				"plugins": [
+					"hiddenPairs",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.58",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "8.14",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "298",
+				"plugins": [
+					"nakedPairs",
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.52",
+				"completenessWithCandidates": "0.86",
+				"packageRounds": "7.06",
+				"packageCompletenessNoCandidates": "0.42"
+			},
+			{
+				"amountUnsolved": "578",
+				"plugins": [
+					"nakedPairs",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.55",
+				"completenessWithCandidates": "0.89",
+				"packageRounds": "5.84",
+				"packageCompletenessNoCandidates": "0.44"
+			},
+			{
+				"amountUnsolved": "2500",
+				"plugins": [
+					"nFish",
+					"nakedPairs"
+				],
+				"completenessNoCandidates": "0.46",
+				"completenessWithCandidates": "0.46",
+				"packageRounds": "4.17",
+				"packageCompletenessNoCandidates": "0.46"
+			},
+			{
+				"amountUnsolved": "2480",
+				"plugins": [
+					"nFish",
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.47",
+				"completenessWithCandidates": "0.85",
+				"packageRounds": "4.18",
+				"packageCompletenessNoCandidates": "0.46"
+			},
+			{
+				"amountUnsolved": "1454",
+				"plugins": [
+					"nFish",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.54",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "4.69",
+				"packageCompletenessNoCandidates": "0.45"
+			},
+			{
+				"amountUnsolved": "1304",
+				"plugins": [
+					"pointingArrows",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.56",
+				"completenessWithCandidates": "0.91",
+				"packageRounds": "4.79",
+				"packageCompletenessNoCandidates": "0.45"
+			},
+			{
+				"amountUnsolved": "464.50",
+				"plugins": [
+					"hiddenPairs"
+				],
+				"completenessNoCandidates": "0.57",
+				"completenessWithCandidates": "0.86",
+				"packageRounds": "5.78",
+				"packageCompletenessNoCandidates": "0.44"
+			},
+			{
+				"amountUnsolved": "1027.75",
+				"plugins": [
+					"nakedPairs"
+				],
+				"completenessNoCandidates": "0.50",
+				"completenessWithCandidates": "0.62",
+				"packageRounds": "4.84",
+				"packageCompletenessNoCandidates": "0.45"
+			},
+			{
+				"amountUnsolved": "1819.25",
+				"plugins": [
+					"nFish"
+				],
+				"completenessNoCandidates": "0.49",
+				"completenessWithCandidates": "0.73",
+				"packageRounds": "4.41",
+				"packageCompletenessNoCandidates": "0.46"
+			},
+			{
+				"amountUnsolved": "1047.00",
+				"plugins": [
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.51",
+				"completenessWithCandidates": "0.87",
+				"packageRounds": "4.68",
+				"packageCompletenessNoCandidates": "0.45"
+			},
+			{
+				"amountUnsolved": "877.50",
+				"plugins": [
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.55",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "5.09",
+				"packageCompletenessNoCandidates": "0.45"
+			}
+		],
+		"3": [
+			{
+				"amountUnsolved": "56",
+				"plugins": [
+					"hiddenPairs",
+					"nakedPairs",
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.62",
+				"completenessWithCandidates": "0.92",
+				"packageRounds": "8.70",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "138",
+				"plugins": [
+					"hiddenPairs",
+					"nakedPairs",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.58",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "8.44",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "502",
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"nakedPairs"
+				],
+				"completenessNoCandidates": "0.56",
+				"completenessWithCandidates": "0.85",
+				"packageRounds": "6.02",
+				"packageCompletenessNoCandidates": "0.43"
+			},
+			{
+				"amountUnsolved": "73",
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.58",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "8.22",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "136",
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.58",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "8.42",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "82",
+				"plugins": [
+					"hiddenPairs",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.61",
+				"completenessWithCandidates": "0.91",
+				"packageRounds": "8.41",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "266",
+				"plugins": [
+					"nakedPairs",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.56",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "7.30",
+				"packageCompletenessNoCandidates": "0.42"
+			},
+			{
+				"amountUnsolved": "245",
+				"plugins": [
+					"nFish",
+					"nakedPairs",
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.50",
+				"completenessWithCandidates": "0.85",
+				"packageRounds": "7.42",
+				"packageCompletenessNoCandidates": "0.42"
+			},
+			{
+				"amountUnsolved": "267",
+				"plugins": [
+					"nFish",
+					"nakedPairs",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.53",
+				"completenessWithCandidates": "0.88",
+				"packageRounds": "7.32",
+				"packageCompletenessNoCandidates": "0.42"
+			},
+			{
+				"amountUnsolved": "1194",
+				"plugins": [
+					"nFish",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.56",
+				"completenessWithCandidates": "0.91",
+				"packageRounds": "4.88",
+				"packageCompletenessNoCandidates": "0.45"
+			},
+			{
+				"amountUnsolved": "164.50",
+				"plugins": [
+					"hiddenPairs"
+				],
+				"completenessNoCandidates": "0.57",
+				"completenessWithCandidates": "0.88",
+				"packageRounds": "7.20",
+				"packageCompletenessNoCandidates": "0.42"
+			},
+			{
+				"amountUnsolved": "245.67",
+				"plugins": [
+					"nakedPairs"
+				],
+				"completenessNoCandidates": "0.55",
+				"completenessWithCandidates": "0.87",
+				"packageRounds": "7.05",
+				"packageCompletenessNoCandidates": "0.42"
+			},
+			{
+				"amountUnsolved": "402.83",
+				"plugins": [
+					"nFish"
+				],
+				"completenessNoCandidates": "0.55",
+				"completenessWithCandidates": "0.89",
+				"packageRounds": "5.95",
+				"packageCompletenessNoCandidates": "0.44"
+			},
+			{
+				"amountUnsolved": "319.33",
+				"plugins": [
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.55",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "5.93",
+				"packageCompletenessNoCandidates": "0.44"
+			},
+			{
+				"amountUnsolved": "347.17",
+				"plugins": [
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.56",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "6.11",
+				"packageCompletenessNoCandidates": "0.43"
+			}
+		],
+		"4": [
+			{
+				"amountUnsolved": "46",
+				"plugins": [
+					"hiddenPairs",
+					"nakedPairs",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.63",
+				"completenessWithCandidates": "0.92",
+				"packageRounds": "8.74",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "13",
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"nakedPairs",
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.56",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "9.00",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "95",
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"nakedPairs",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.57",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "8.83",
+				"packageCompletenessNoCandidates": "0.40"
+			},
+			{
+				"amountUnsolved": "46",
+				"plugins": [
+					"hiddenPairs",
+					"nFish",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.59",
+				"completenessWithCandidates": "0.91",
+				"packageRounds": "8.37",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "209",
+				"plugins": [
+					"nFish",
+					"nakedPairs",
+					"pointingArrows",
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.54",
+				"completenessWithCandidates": "0.89",
+				"packageRounds": "7.75",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "50.00",
+				"plugins": [
+					"hiddenPairs"
+				],
+				"completenessNoCandidates": "0.59",
+				"completenessWithCandidates": "0.91",
+				"packageRounds": "8.71",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "90.75",
+				"plugins": [
+					"nakedPairs"
+				],
+				"completenessNoCandidates": "0.56",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "8.20",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "90.75",
+				"plugins": [
+					"nFish"
+				],
+				"completenessNoCandidates": "0.56",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "8.15",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "78.50",
+				"plugins": [
+					"pointingArrows"
+				],
+				"completenessNoCandidates": "0.56",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "8.04",
+				"packageCompletenessNoCandidates": "0.41"
+			},
+			{
+				"amountUnsolved": "99.00",
+				"plugins": [
+					"removeByElements"
+				],
+				"completenessNoCandidates": "0.56",
+				"completenessWithCandidates": "0.90",
+				"packageRounds": "8.19",
+				"packageCompletenessNoCandidates": "0.41"
+			}
+		],
+		"5": []
 	}
 }
