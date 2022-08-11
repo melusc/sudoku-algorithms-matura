@@ -38,7 +38,7 @@ Statistics about the amount of rounds solved sudokus took to solve:
 - What is the greatest and lowest amount of rounds they took?
 - What was the average rounds all five plugins take to solve the sudokus?
 
-#### [`stats/n-fish-from-initial.json`]
+#### [`stats/n-fish-from-initial.csv`] & [`stats/n-fish-from-initial.json`]
 
 The before and after for all sudokus (in their initial state) where N-Fish was able to find a match and remove candidates as a result.
 
@@ -49,18 +49,22 @@ For all sudokus that N-Fish and other plugins were able to solve:
 - How many matches did N-Fish find? (`totalMatches`)
 - How many matches did N-Fish that lead to candidates being removed? (`usefulMatches`)
 
-#### [`stats/pointing-arrows-no-element-arrow.json`]
+#### [`stats/pointing-arrows-no-element-arrow.csv`] & [`stats/pointing-arrows-no-element-arrow.json`]
 
 A list of sudokus solved by Pointing Arrows if elements weren't considered pointing arrows.
 
 - Size of the sudoku
 - Stringified, unsolved sudoku
 
-#### [`stats/full-hidden-pairs-compare.json`]
+#### [`stats/full-hidden-pairs-compare.csv`] & [`stats/full-hidden-pairs-compare.json`]
 
 Using a complete version of Hidden Pairs, that can find all hidden pairs (by brute forcing all combinations):
 A list of sudokus that, when trying to solve with Hidden Pairs + Remove by Elemenets and Hidden Pairs,
 result in different outputs (different candidates, fewer or more elements).
+
+#### [`stats/pointing-arrows-remove-by-element-compare.csv`] & [`stats/pointing-arrows-remove-by-element-compare.json`]
+
+Sudokus Pointing Arrows can solve but Remove by Elements cannot and vice versa.
 
 [`combinations/`]: ./combinations/
 [`generated/`]: ./generated/
@@ -74,5 +78,10 @@ result in different outputs (different candidates, fewer or more elements).
 [`stats/rounds.csv`]: ./stats/rounds.csv
 [`stats/n-fish-stats.csv`]: ./stats/n-fish-stats.csv
 [`stats/n-fish-from-initial.json`]: ./stats/n-fish-from-initial.json
+[`stats/n-fish-from-initial.csv`]: ./stats/n-fish-from-initial.csv
 [`stats/pointing-arrows-no-element-arrow.json`]: ./stats/pointing-arrows-no-element-arrow.json
+[`stats/pointing-arrows-no-element-arrow.csv`]: ./stats/pointing-arrows-no-element-arrow.csv
 [`stats/full-hidden-pairs-compare.json`]: ./stats/full-hidden-pairs-compare.json
+[`stats/full-hidden-pairs-compare.csv`]: ./stats/full-hidden-pairs-compare.csv
+[`stats/pointing-arrows-remove-by-element-compare.json`]: ./stats/pointing-arrows-remove-by-element-compare.json
+[`stats/pointing-arrows-remove-by-element-compare.csv`]: ./stats/pointing-arrows-remove-by-element-compare.csv
