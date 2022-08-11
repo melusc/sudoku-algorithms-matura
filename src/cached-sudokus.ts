@@ -8,19 +8,17 @@ import {generateSudoku} from './generate-sudoku.js';
 const outDir = new URL('../data/generated/', import.meta.url);
 await fs.mkdir(outDir, {recursive: true});
 
+/* eslint-disable @typescript-eslint/naming-convention */
 const paths = {
-	// eslint-disable-next-line @typescript-eslint/naming-convention
 	9: new URL('9.txt', outDir),
-	// eslint-disable-next-line @typescript-eslint/naming-convention
 	16: new URL('16.txt', outDir),
 } as const;
 
 const previous = {
-	// eslint-disable-next-line @typescript-eslint/naming-convention
 	9: [] as string[],
-	// eslint-disable-next-line @typescript-eslint/naming-convention
 	16: [] as string[],
 };
+/* eslint-enable @typescript-eslint/naming-convention */
 
 const writePrevious = async (key: keyof typeof previous): Promise<void> => {
 	const path = paths[key];

@@ -1,5 +1,6 @@
 import {writeFile} from 'node:fs/promises';
 
+import Papa from 'papaparse';
 import {Cell, Structure, Sudoku} from '@lusc/sudoku';
 // eslint-disable-next-line n/file-extension-in-import
 import {removeByElements} from '@lusc/sudoku/plugins';
@@ -7,7 +8,7 @@ import {removeByElements} from '@lusc/sudoku/plugins';
 import {CombinationsResults} from '../../try-combinations.js';
 import {makePaths} from '../utils.js';
 
-const {jsonOutPath} = makePaths('full-hidden-pairs-compare');
+const {jsonOutPath, csvOutPath} = makePaths('full-hidden-pairs-compare');
 
 function * eachCandidate(structure: Structure, cell: Cell): Iterable<number> {
 	for (const candidate of cell.candidates) {
@@ -132,5 +133,23 @@ export async function fullHiddenPairsCompare(
 
 	results[size] = diff;
 
-	await writeFile(jsonOutPath, JSON.stringify(results));
+	await write();
 }
+
+type CsvLine = {
+	size: string;
+	amount: number;
+};
+const write = async () => {
+	await writeFile(jsonOutPath, JSON.stringify(results));
+
+	const lines: CsvLine[] = [];
+	for (const [size, diffs] of Object.entries(results)) {
+		lines.push({
+			size,
+			amount: diffs.length,
+		});
+	}
+
+	await writeFile(csvOutPath, Papa.unparse(lines));
+};

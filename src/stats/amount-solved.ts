@@ -17,7 +17,7 @@ const {jsonOutPath, csvOutPath} = makePaths('amount-solved');
 
 type AmountSolvedValue = {
 	plugins: string[];
-	amountSolved: number;
+	amountSolved: number | string;
 };
 type AmountSolved = Record<number, Record<number, AmountSolvedValue[]>>;
 
@@ -26,7 +26,7 @@ const toCsv = (input: AmountSolved): string => {
 		size: string;
 		amount: string;
 		plugins: string;
-		amountSolved: number;
+		amountSolved: number | string;
 	}> = [];
 
 	for (const [size, sizeValues] of Object.entries(input)) {
@@ -80,7 +80,7 @@ export const amountSolved = async (
 			result.push({
 				plugins,
 				amountSolved:
-					amountSolved / amountPluginInCombination(combinationsAmount),
+					(amountSolved / amountPluginInCombination(combinationsAmount)).toFixed(2),
 			});
 		} else {
 			result.push({

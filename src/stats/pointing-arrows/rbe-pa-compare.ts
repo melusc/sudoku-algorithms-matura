@@ -1,9 +1,13 @@
 import {writeFile} from 'node:fs/promises';
 
+import Papa from 'papaparse';
+
 import {CombinationsResults} from '../../try-combinations.js';
 import {makePaths} from '../utils.js';
 
-const {jsonOutPath} = makePaths('pointing-arrows-remove-by-element-compare');
+const {jsonOutPath, csvOutPath} = makePaths(
+	'pointing-arrows-remove-by-element-compare',
+);
 
 type ResultValue = {
 	solvedByRbe: string[];
@@ -48,5 +52,26 @@ export async function rbePaCompare(
 
 	results[size] = diff;
 
-	await writeFile(jsonOutPath, JSON.stringify(results));
+	await write();
 }
+
+type CsvLine = {
+	size: string;
+	solvedByPa: number;
+	solvedByRbe: number;
+};
+const write = async () => {
+	await writeFile(jsonOutPath, JSON.stringify(results));
+
+	const lines: CsvLine[] = [];
+
+	for (const [size, {solvedByPa, solvedByRbe}] of Object.entries(results)) {
+		lines.push({
+			size,
+			solvedByPa: solvedByPa.length,
+			solvedByRbe: solvedByRbe.length,
+		});
+	}
+
+	await writeFile(csvOutPath, Papa.unparse(lines));
+};

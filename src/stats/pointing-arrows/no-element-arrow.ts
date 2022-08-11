@@ -1,11 +1,12 @@
 import {writeFile} from 'node:fs/promises';
 
+import Papa from 'papaparse';
 import {Sudoku, Structure, Cell} from '@lusc/sudoku';
 
 import {CombinationsResults} from '../../try-combinations.js';
 import {makePaths} from '../utils.js';
 
-const {jsonOutPath} = makePaths('pointing-arrows-no-element-arrow');
+const {jsonOutPath, csvOutPath} = makePaths('pointing-arrows-no-element-arrow');
 
 type SudokuInternal = Sudoku & {
 	blockWidth: number;
@@ -102,10 +103,8 @@ const pointingArrows = (sudoku: SudokuInternal): void => {
 	}
 };
 
-const solved: Array<{
-	size: number;
-	stringified: string;
-}> = [];
+const result: Record<string, string[]> = {};
+
 export const pointingArrowsNoElementArrow = async (
 	combinations: CombinationsResults,
 	size: number,
@@ -114,6 +113,7 @@ export const pointingArrowsNoElementArrow = async (
 		return;
 	}
 
+	const solved: string[] = [];
 	for (const [sudokuStringified] of combinations.combinations) {
 		const s = Sudoku.fromString(sudokuStringified, size) as SudokuInternal;
 
@@ -123,12 +123,31 @@ export const pointingArrowsNoElementArrow = async (
 		} while (s.anyChanged && !s.isSolved());
 
 		if (s.isSolved()) {
-			solved.push({
-				stringified: sudokuStringified,
-				size,
-			});
+			solved.push(sudokuStringified);
 		}
 	}
 
-	await writeFile(jsonOutPath, JSON.stringify(solved));
+	result[size] = solved;
+
+	await write();
+};
+
+type CsvLine = {
+	size: string;
+	amount: number;
+};
+
+const write = async () => {
+	await writeFile(jsonOutPath, JSON.stringify(result));
+
+	const lines: CsvLine[] = [];
+
+	for (const [size, solved] of Object.entries(result)) {
+		lines.push({
+			size,
+			amount: solved.length,
+		});
+	}
+
+	await writeFile(csvOutPath, Papa.unparse(lines));
 };

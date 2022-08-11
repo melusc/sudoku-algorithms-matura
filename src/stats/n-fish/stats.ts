@@ -195,7 +195,7 @@ export const nFishStats = async (
 				const csvLine = csvLines.find(
 					line =>
 						line.size === size
-						&& line.plugins === combinationResult.plugins.join('|')
+						&& line.plugins === combinationResult.plugins.join(', ')
 						&& line.matchSize === structureIndices.length,
 				);
 				if (csvLine) {
@@ -209,7 +209,7 @@ export const nFishStats = async (
 						size,
 						amount: combinationResult.plugins.length,
 						matchSize: structureIndices.length,
-						plugins: combinationResult.plugins.join('|'),
+						plugins: combinationResult.plugins.join(', '),
 						usefulMatches: madeChange ? 1 : 0,
 						totalMatches: 1,
 					});

@@ -17,7 +17,7 @@ export const clean = async () => {
 	await mkdir(outDir, {recursive: true});
 };
 
-export const pluginsSeparator = '|';
+export const pluginsSeparator = ', ';
 
 export const makePaths = (
 	name: string,
