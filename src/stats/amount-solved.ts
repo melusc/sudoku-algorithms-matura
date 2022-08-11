@@ -79,8 +79,9 @@ export const amountSolved = async (
 		if (combinationsAmount > 1 && plugins.length === 1) {
 			result.push({
 				plugins,
-				amountSolved:
-					(amountSolved / amountPluginInCombination(combinationsAmount)).toFixed(2),
+				amountSolved: (
+					amountSolved / amountPluginInCombination(combinationsAmount)
+				).toFixed(2),
 			});
 		} else {
 			result.push({
