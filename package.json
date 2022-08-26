@@ -26,7 +26,7 @@
 		"prettier": "^2.7.1",
 		"rimraf": "^3.0.2",
 		"typescript": "^4.8.2",
-		"xo": "^0.51.0"
+		"xo": "^0.52.1"
 	},
 	"type": "module"
 }
