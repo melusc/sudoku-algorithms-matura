@@ -22,7 +22,7 @@
 	"devDependencies": {
 		"@lusc/tsconfig": "^2.0.0",
 		"@types/node": "^18.7.13",
-		"@types/papaparse": "^5.3.3",
+		"@types/papaparse": "^5.3.4",
 		"prettier": "^2.7.1",
 		"rimraf": "^3.0.2",
 		"typescript": "^4.8.2",
